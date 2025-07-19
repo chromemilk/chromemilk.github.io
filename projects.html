@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projects – Hicswa Community Microscopy</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <meta
+      name="description"
+      content="PhotonPeek open-source photon scanning microscope project details: hardware, firmware, software pipeline, roadmap."
+    />
+  </head>
+  <body>
+    <header class="glass nav-blur">
+      <div class="container nav-container">
+        <h1 class="logo">Hicswa<span class="accent">Microscopy</span></h1>
+        <nav id="nav-menu">
+          <a href="index.html#about">About</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#resources">Resources</a>
+          <a href="index.html#data">Data&nbsp;&amp;&nbsp;Code</a>
+          <a href="index.html#governance">Governance</a>
+        </nav>
+        <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <h2 id="photonpeek">PhotonPeek – Photon Scanning Microscope</h2>
+        <p class="section-intro">
+          Open hardware + software platform to democratize photonic imaging.
+          Designed so a motivated high-schooler with
+          <em>&lt;$100</em> budget can assemble, calibrate, and generate
+          quantitative 2D / 3D intensity maps.
+        </p>
+
+        <!-- Overview -->
+        <div class="glass block">
+          <h3>Overview</h3>
+          <div class="badges">
+            <span class="badge">Arduino</span>
+            <span class="badge">Python GUI</span>
+            <span class="badge">FFT</span>
+            <span class="badge">Deconvolution</span>
+            <span class="badge">AI SR</span>
+            <span class="badge">MIT</span>
+          </div>
+          <p>
+            PhotonPeek performs a raster scan using either manual stage shifts
+            or stepper-driven motion. A 650 nm laser spot is steered onto the
+            sample and the reflected or transmitted intensity is captured by a
+            photodiode. The Arduino Mega streams raw readings tagged with
+            coordinates; the Python application accumulates, averages
+            (samples-per-pixel oversampling), then executes a modular
+            enhancement pipeline.
+          </p>
+          <div class="btn-row">
+            <a
+              class="btn-glow"
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
+              target="_blank"
+              rel="noopener"
+              >Repository ↗</a
+            >
+            <a class="btn-outline" href="../data/">Example Datasets</a>
+          </div>
+        </div>
+
+        <!-- Core Concepts -->
+        <div class="grid cols-2" style="margin-top: 2.4rem">
+          <div class="glass block">
+            <h3>Core Goals</h3>
+            <ul>
+              <li>
+                <strong>Affordability:</strong> Keep BOM under $100 (excluding
+                optional motors).
+              </li>
+              <li>
+                <strong>Transparency:</strong> Every algorithm documented;
+                adjustable parameters.
+              </li>
+              <li>
+                <strong>Extensibility:</strong> Modular processing pipeline for
+                custom stages.
+              </li>
+              <li>
+                <strong>Education:</strong> Teachable codebase—tidy, commented,
+                minimal dependencies.
+              </li>
+            </ul>
+          </div>
+          <div class="glass block">
+            <h3>Performance Targets</h3>
+            <ul>
+              <li>&lt;10 µm effective lateral sampling (high mode)</li>
+              <li>
+                Real-time preview refresh without blocking acquisition thread
+              </li>
+              <li>Configurable oversampling for SNR tradeoff</li>
+              <li>
+                Deterministic scan reproducibility (optional stepper control)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Parts Grid -->
+        <div class="glass block" style="margin-top: 2.4rem">
+          <h3>Parts (Condensed)</h3>
+          <div class="parts-grid">
+            <div class="part">
+              <h4>Laser Diode 650 nm 5 mW</h4>
+              <p>Stable red illumination; safe, inexpensive.</p>
+            </div>
+            <div class="part">
+              <h4>Photodiode Module</h4>
+              <p>Analog voltage proportional to intensity; feeds A0.</p>
+            </div>
+            <div class="part">
+              <h4>Penta-Prism</h4>
+              <p>Fixed 90° deviation; alignment simplicity.</p>
+            </div>
+            <div class="part">
+              <h4>Arduino Mega 2560</h4>
+              <p>Multiple analog inputs &amp; flash space.</p>
+            </div>
+            <div class="part">
+              <h4>Stepper Motors</h4>
+              <p>Automated XY(Z) scanning (optional upgrade).</p>
+            </div>
+            <div class="part">
+              <h4>Objective Lens</h4>
+              <p>Spot shaping + resolution improvement.</p>
+            </div>
+            <div class="part">
+              <h4>3D-Printed Mounts</h4>
+              <p>Rigid, repeatable mechanical geometry.</p>
+            </div>
+            <div class="part">
+              <h4>Python Host PC</h4>
+              <p>Acquisition + processing pipeline.</p>
+            </div>
+          </div>
+          <aside class="inline-tip">
+            See <code>hardware/</code> for STL files and wiring diagrams.
+          </aside>
+        </div>
+
+        <!-- Data Protocol -->
+        <div class="glass block" style="margin-top: 2.4rem">
+          <h3>Serial Data Protocol</h3>
+          <p>
+            The acquisition layer is line-oriented ASCII for clarity &amp;
+            debugging:
+          </p>
+          <pre class="code-block">
+CONFIG,&lt;mode&gt;,&lt;precision&gt;,&lt;x_steps&gt;,&lt;y_steps&gt;,&lt;z_steps&gt;,&lt;spp&gt;
+HEADER,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;spp&gt;
+DATA,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;value&gt;</pre
+          >
+          <p>
+            <strong>CONFIG</strong> sets the session.
+            <strong>HEADER</strong> echoes geometry for host validation. Each
+            <strong>DATA</strong> line is streamed as soon as the analog read
+            settles, enabling overlapping compute &amp; I/O.
+          </p>
+        </div>
+
+        <!-- Processing Flow -->
+        <div class="glass block" style="margin-top: 2.4rem">
+          <h3>Processing Flow</h3>
+          <ol class="flow-steps">
+            <li>
+              <strong>Accumulate:</strong> Sum raw counts into voxel grid;
+              maintain hit counters.
+            </li>
+            <li>
+              <strong>Average:</strong> Divide sums by counts → floating
+              intensity.
+            </li>
+            <li>
+              <strong>Flat-Field (optional):</strong> Divide by normalized gain
+              map.
+            </li>
+            <li><strong>Normalize:</strong> Scale to [0,1].</li>
+            <li>
+              <strong>Edge Boost (FFT):</strong> High-boost via low-freq
+              subtraction.
+            </li>
+            <li>
+              <strong>Deconvolution:</strong> Richardson–Lucy or Auto Wiener.
+            </li>
+            <li><strong>Contrast:</strong> CLAHE for local detail.</li>
+            <li><strong>Upscale:</strong> Interp / Rescale / DNN SR model.</li>
+            <li>
+              <strong>Export:</strong> CSV / PNG heatmap / grayscale / 3D mesh
+              (marching cubes).
+            </li>
+          </ol>
+        </div>
+
+        <!-- Minimal Firmware Sketch Snippet -->
+        <div class="glass block" style="margin-top: 2.4rem">
+          <h3>Firmware Skeleton (Excerpt)</h3>
+          <pre class="code-block">
+// Pseudocode
+void loop() {
+  if (Serial.available()) parseConfig();
+  if (scanning) {
+     if (advancePosition()) {
+        int value = analogRead(PHOTODIODE_PIN);
+        Serial.print("DATA,");
+        Serial.print(x); Serial.print(',');
+        Serial.print(y); Serial.print(',');
+        Serial.print(z); Serial.print(',');
+        Serial.println(value);
+     } else {
+        scanning = false;
+     }
+  }
+}</pre
+          >
+          <p>
+            Full implementation (non-blocking state machine, optional stepper
+            stepping &amp; microsecond settling delay) lives in
+            <code>arduino/</code>.
+          </p>
+        </div>
+
+        <!-- Calibration -->
+        <div class="glass block" style="margin-top: 2.4rem">
+          <h3>Calibration Checklist</h3>
+          <ul>
+            <li>
+              <strong>Flat-Field:</strong> White reference sheet → run
+              calibration tool (no sample present).
+            </li>
+            <li>
+              <strong>Focus:</strong> Adjust objective until spot is minimal
+              &amp; intensity gradient sharp.
+            </li>
+            <li>
+              <strong>Drift Check:</strong> Repeat a short scan after 5 minutes;
+              compare peak shift &lt;1 pixel.
+            </li>
+            <li>
+              <strong>Linearity:</strong> Optional: variable ND filters → record
+              response curve.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="glass block" style="margin-top: 2.4rem">
+          <h3>Roadmap</h3>
+          <ul>
+            <li>
+              Stepper driver abstraction &amp; G-code inspired motion queue
+            </li>
+            <li>Multi-wavelength module (swapable laser cartridges)</li>
+            <li>Live pseudo-color depth projection for 3D scans</li>
+            <li>On-device EEPROM config persistence</li>
+            <li>Web serial viewer (wasm + pyodide fallback)</li>
+          </ul>
+        </div>
+
+        <!-- Contribution -->
+        <div class="glass block" style="margin-top: 2.4rem">
+          <h3>Contributing</h3>
+          <p>
+            Issues welcome for build problems, feature requests, or data
+            anomalies. Pull requests: keep functions under 120 lines, add
+            docstrings, and attach before/after images for processing changes.
+          </p>
+          <div class="btn-row">
+            <a
+              class="btn-outline"
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/issues"
+              target="_blank"
+              rel="noopener"
+              >Report Issue</a
+            >
+            <a
+              class="btn-soft"
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/pulls"
+              target="_blank"
+              rel="noopener"
+              >Open Pull Request</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer glass">
+      <div class="container">
+        <p>&copy; 2025 Hicswa Community Microscopy.</p>
+      </div>
+    </footer>
+  </body>
+</html>

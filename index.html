@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hicswa Community Microscopy</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="glass nav-blur">
+      <div class="container nav-container">
+        <h1 class="logo">Hicswa<span class="accent">Microscopy</span></h1>
+
+        <nav id="nav-menu">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#resources">Resources</a>
+          <a href="#data">Data&nbsp;&amp;&nbsp;Code</a>
+          <a href="#governance">Governance</a>
+        </nav>
+        <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <h2 class="tagline">Science, Shared&nbsp;and&nbsp;Simplified</h2>
+        <p class="subtitle">
+          Grass-roots microscopy for every curious mind.<br />
+          Open-source builds, free guides, and community-powered STEM.
+        </p>
+        <div class="btn-row">
+          <a href="#projects" class="btn-glow">Explore Projects ↓</a>
+          <a href="projects.html#photonpeek" class="btn-outline"
+            >PhotonPeek Details</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container glass block">
+        <h2>About&nbsp;Us</h2>
+        <p>
+          Hicswa Community Microscopy is a volunteer-run initiative founded by
+          <strong>Koen Hicswa</strong>. We build affordable, open-source
+          microscopes, publish detailed guides, and sponsor local STEM programs
+          (including student robotics teams) to put advanced science tools into
+          every classroom.
+        </p>
+        <ul class="purpose-list">
+          <li>
+            🎯 <strong>Accessibility</strong> — DIY microscopes under $100.
+          </li>
+          <li>
+            📚 <strong>Education</strong> — Free tutorials &amp; lesson plans.
+          </li>
+          <li>
+            🤝 <strong>Community</strong> — Shared knowledge &amp; support.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Featured&nbsp;Project</h2>
+        <p class="section-intro">
+          Flagship open hardware &amp; software efforts pushing low-cost
+          photonic imaging forward.
+        </p>
+        <article class="project-card glass">
+          <h3>PhotonPeek – Photon Scanning Microscope</h3>
+          <div class="badges">
+            <span class="badge">Sub $100</span>
+            <span class="badge">&lt;10 µm</span>
+            <span class="badge">Open Source</span>
+            <span class="badge">Arduino</span>
+            <span class="badge">Python GUI</span>
+          </div>
+          <p class="project-summary">
+            Arduino-powered scanning microscope creating 2D &amp; 3D
+            light-intensity maps for high-school labs. Includes FFT sharpening,
+            deconvolution, AI super-res, CSV/PNG/3D exports.
+          </p>
+          <div class="btn-row">
+            <a class="btn-outline" href="projects.html#photonpeek"
+              >Learn&nbsp;More →</a
+            >
+            <a
+              class="btn-soft"
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
+              target="_blank"
+              rel="noopener"
+              >GitHub ↗</a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="resources" class="section">
+      <div class="container glass block">
+        <h2>Guides&nbsp;&amp;&nbsp;Resources</h2>
+        <p>
+          Build documents, wiring diagrams, 3D-print files, and lesson plans for
+          educators.
+        </p>
+        <ul class="link-list">
+          <li><a href="hardware/">Hardware Documents</a></li>
+          <li><a href="pc_software/">Python GUI Source</a></li>
+          <li><a href="arduino/">Firmware (Arduino Mega 2560)</a></li>
+          <li><a href="data/">Example Scan Data</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="data" class="section">
+      <div class="container glass block">
+        <h2>Data&nbsp;&amp;&nbsp;Code</h2>
+        <p>
+          Browse real scan datasets, example notebooks, pipeline demos, and
+          community pull requests.
+        </p>
+        <div class="data-embed">
+          <iframe
+            src="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
+            frameborder="0"
+            scrolling="0"
+            width="120"
+            height="20"
+            title="GitHub"
+          ></iframe>
+          <p>
+            <a
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
+              target="_blank"
+              rel="noopener"
+              >PhotonPeek Repository ↗</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="governance" class="section">
+      <div class="container glass block">
+        <h2>Governance</h2>
+        <p><strong>Name:</strong> Hicswa Community Microscopy</p>
+        <p>
+          <strong>Purpose:</strong> Promote science accessibility via
+          community-built microscopes; publish open-source educational
+          materials; support local STEM education and robotics.
+        </p>
+        <p>
+          <strong>Membership:</strong> Open to anyone interested. No dues
+          currently.
+        </p>
+        <p>
+          <strong>Leadership:</strong> Founder &amp; Organizer: Koen Hicswa.
+          Additional roles may be added as needed.
+        </p>
+        <p><strong>Meetings:</strong> Held as needed (virtual or in-person).</p>
+        <p>
+          <strong>Finances:</strong> Unincorporated association. May accept
+          donations or make charitable contributions.
+        </p>
+        <p>
+          <strong>Dissolution:</strong> Remaining assets to a nonprofit
+          educational org or local STEM program (e.g., school robotics team).
+        </p>
+        <p class="signature">Signed: Koen Hicswa – Effective Date: 7/19/2025</p>
+      </div>
+    </section>
+
+    <footer class="footer glass">
+      <div class="container">
+        <p>&copy; 2025 Hicswa Community Microscopy &nbsp;|&nbsp; MIT License</p>
+      </div>
+    </footer>
+  </body>
+</html>
