@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Projects – Hicswa Community Microscopy</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
@@ -65,7 +65,6 @@
               rel="noopener"
               >Repository ↗</a
             >
-            <a class="btn-outline" href="../data/">Example Datasets</a>
           </div>
         </div>
 
@@ -293,6 +292,74 @@ void loop() {
           </div>
         </div>
       </div>
+
+      <hr class="section-separator" style="margin-top: 100px" />
+
+      <section id="moleculesimulator" class="section">
+        <div class="container glass block">
+          <h2>3D Molecule Simulator</h2>
+          <p>A real-time 3D simulation written in modern C++ using OpenGL.</p>
+
+          <h3>✨ Features</h3>
+          <ul>
+            <li>Electron geometry calculations</li>
+            <li>Predicts bond angles & models lone pairs via VSEPR</li>
+            <li>Dynamic dipole & polarity visualization</li>
+            <li>Custom particle engine with collision detection</li>
+            <li>Displays pi and sigma bonds</li>
+            <li>360° flying camera, floor grid & dynamic light shaders</li>
+            <li>
+              Interactive drag, bond creation/deletion, stability indicator
+            </li>
+          </ul>
+
+          <h3>📚 Tech Stack</h3>
+          <ul>
+            <li>C++17 &amp; OpenGL 3.3+</li>
+            <li>GLFW (window/input), GLAD (loader), GLM (math)</li>
+            <li>CMake build system</li>
+          </ul>
+
+          <h3>🚀 Getting Started</h3>
+          <pre><code>git clone https://github.com/chromemilk/3D-Particle-Simulator.git
+cd 3D-Particle-Simulator
+mkdir build && cd build
+cmake ..
+make
+./Molecule\ Simulator
+</code></pre>
+
+          <h3>📄 License</h3>
+          <p>
+            This project is licensed under the MIT License.
+            <a href="LICENSE">See LICENSE</a> for details.
+          </p>
+
+          <h3>👏 Acknowledgements</h3>
+          <ul>
+            <li>LearnOpenGL – modern OpenGL tutorials</li>
+            <li>TheCherno – C++ & OpenGL series</li>
+            <li>Open-source contributors to GLFW, GLM, and GLAD</li>
+          </ul>
+        </div>
+        <div class="container glass block" style="margin-top: 2.4rem">
+          <h3>Demo</h3>
+          <video
+            controls
+            autoplay
+            loop
+            muted
+            playsinline
+            style="max-width: 100%; border-radius: 12px"
+          >
+            <source
+              src="https://github.com/user-attachments/assets/a902c38a-9a0e-49d6-9f6f-f58ca07da89e"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
     </main>
 
     <footer class="footer glass">
