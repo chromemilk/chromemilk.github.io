@@ -25,6 +25,7 @@
           <a href="#resources">Resources</a>
           <a href="#data">Data&nbsp;&amp;&nbsp;Code</a>
           <a href="#governance">Governance</a>
+          <a href="members.html" class="active">Team</a>
         </nav>
         <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
       </div>
@@ -32,7 +33,11 @@
 
     <section class="hero">
       <div class="container hero-content">
-        <h2 class="tagline">Science, Shared&nbsp;and&nbsp;Simplified</h2>
+        <img src="logo.png" alt="Koen Hicswa" height="250" width="250" style="border-radius: 20%;;"/>
+
+        <h2 class="tagline">
+          <span class="text">Science, Shared&nbsp;and&nbsp;Simplified</span>
+        </h2>
         <p class="subtitle">
           Grass-roots microscopy, chemistry, and biology for every curious
           mind.<br />
@@ -40,13 +45,21 @@
         </p>
         <div class="btn-row">
           <a href="#projects" class="btn-glow">Explore Projects ↓</a>
+          <a href="#team-intro" class="btn-glow">About Us ↓</a>
           <a href="projects.html#photonpeek" class="btn-outline"
-            >PhotonPeek Details</a
-          >
+            >PhotonPeek Details
+          </a>
           <a href="projects.html#moleculesimulator" class="btn-outline"
             >Molecule Engine</a
           >
         </div>
+      </div>
+    </section>
+
+    <section id="team-intro" class="section">
+      <div class="container">
+        <h2>Our Team</h2>
+        <div id="name-rotator"></div>
       </div>
     </section>
 
@@ -56,15 +69,17 @@
         <p>
           Hicswa Community Science is an initiative founded by
           <strong>Koen Hicswa</strong>. We build affordable, open-source
-          microscopes, publish detailed guides, and want to sponsor local STEM programs
-          (including student robotics teams) to promote hands-on learning.
+          microscopes, publish detailed guides, and want to sponsor local STEM
+          programs (including student robotics teams) to promote hands-on
+          learning.
         </p>
         <ul class="purpose-list">
           <li>
-            🎯 <strong>Accessibility</strong> — DIY microscopes under $100.
+            🎯 <strong>Accessibility</strong> — DIY microscopes under $100, free
+            simulation engine
           </li>
           <li>
-            📚 <strong>Education</strong> — Free tutorials &amp; lesson plans.
+            📚 <strong>Education</strong> — Free tutorials &amp; documentation.
           </li>
           <li>
             🤝 <strong>Community</strong> — Shared knowledge &amp; support.
@@ -150,10 +165,29 @@
           educators.
         </p>
         <ul class="link-list">
-          <li><a href="hardware/">Hardware Documents</a></li>
-          <li><a href="pc_software/">Python GUI Source</a></li>
-          <li><a href="arduino/">Firmware (Arduino Mega 2560)</a></li>
-          <li><a href="data/">Example Scan Data</a></li>
+          <li>
+            <a
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/README.md"
+              >Hardware Documents</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/analysis/GUI.py"
+              >Python GUI Source</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/RasterV2.ino"
+              >Firmware (Arduino Mega 2560)</a
+            >
+          </li>
+          <li>
+            <a href="https://sites.google.com/view/photonpeek/data?authuser=0"
+              >Example Scan Data</a
+            >
+          </li>
         </ul>
       </div>
     </section>
@@ -185,7 +219,6 @@
         </div>
       </div>
     </section>
-
     <section id="governance" class="section">
       <div class="container glass block">
         <h2>Governance</h2>
@@ -197,28 +230,36 @@
         </p>
         <p>
           <strong>Membership:</strong> Open to anyone interested. No dues
-          currently.
+          currently. Membership is automatic upon request and includes consent
+          for names to be publicly listed on this website to acknowledge
+          participation.
         </p>
         <p>
-          <strong>Leadership:</strong> Founder &amp; Organizer: Koen Hicswa.
-          Additional roles may be added as needed.
+          <strong>Leadership:</strong> Founders: Koen Hicswa and Kaleb Wilcox.
+          Koen Hicswa currently serves as Organizer. Additional roles or
+          officers may be created and filled as needed by mutual agreement of
+          the founders or by member consensus.
         </p>
         <p><strong>Meetings:</strong> Held as needed (virtual or in-person).</p>
         <p>
-          <strong>Finances:</strong> Unincorporated association. May accept
-          donations or make charitable contributions.
+          <strong>Finances:</strong> Operates as an unincorporated association.
+          The association is not a separate legal entity; any funds received
+          (including donations) are held and managed by the organizer on behalf
+          of the group and used solely to further its stated purpose. The
+          association may accept voluntary contributions and may make charitable
+          donations to support local STEM or educational programs.
         </p>
         <p>
           <strong>Dissolution:</strong> Remaining assets to a nonprofit
           educational org or local STEM program (e.g., school robotics team).
         </p>
-        <p class="signature">Signed: Koen Hicswa – Effective Date: 7/24/2025</p>
+        <p class="signature">Signed: Koen Hicswa – Effective Date: 7/26/2025</p>
       </div>
     </section>
 
     <footer class="footer glass">
       <div class="container">
-        <p>&copy; 2025 Hicswa Community Science &nbsp;|&nbsp; MIT License</p>
+        <p>&copy; 2025 Hicswa Community Science</p>
       </div>
     </footer>
   </body>

@@ -114,7 +114,7 @@ header {
     position: absolute;
     top: 100%;
     right: 1rem;
-    background: var(--glass);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(var(--blur));
     flex-direction: column;
     gap: 0.9rem;
@@ -140,29 +140,28 @@ header {
 }
 
 .glass {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .glass::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 
-    /* Default: subtle corner glow */
-    background: radial-gradient(
-        circle at var(--corner-x, 0%) var(--corner-y, 0%),
-        rgba(155, 59, 255, 0.15),
-        transparent 70%
-    );
+  /* Default: subtle corner glow */
+  background: radial-gradient(
+    circle at var(--corner-x, 0%) var(--corner-y, 0%),
+    rgba(155, 59, 255, 0.15),
+    transparent 70%
+  );
 
-    transition: background 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-
 .block {
-  padding: clamp(1.8rem, 3.8vw, 2.8rem) clamp(1.5rem, 3.2vw, 2.6rem);
+  padding: clamp(0.8rem, 100px, 1.5rem) clamp(1.5rem, 3.2vw, 2.6rem);
 }
 
 .nav-blur {
@@ -170,12 +169,12 @@ header {
 }
 
 .hero {
-  min-height: 78vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 0 3rem;
+  padding: 0 0 3rem;
   background: radial-gradient(
       circle at 30% 25%,
       rgba(155, 59, 255, 0.35),
@@ -193,6 +192,7 @@ header {
   font-weight: 700;
   margin-bottom: 0.9rem;
   line-height: 1.1;
+  display: block;
 }
 .subtitle {
   font-size: clamp(1.05rem, 2vw, 1.25rem);
@@ -467,4 +467,120 @@ footer.footer a:hover {
 .section-separator {
   height: 1px;
   background: rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Members Grid & Cards ───────────────────────────────────────────────── */
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.member-card {
+  text-align: center;
+  padding: clamp(1.8rem, 3vw, 2.4rem);
+  border-radius: var(--radius);
+  transition: transform var(--transition), box-shadow var(--transition);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--blur));
+  position: relative;
+  overflow: hidden;
+}
+
+.member-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--purple);
+}
+
+.member-card h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.member-card .role {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#team-intro {
+  text-align: center;
+  padding: clamp(3rem, 7vw, 3rem) 0;
+}
+
+#name-rotator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  overflow: hidden;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: var(--text);
+}
+
+#name-rotator span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  white-space: nowrap;
+  opacity: 0;
+  animation: rotateFade 6s ease-in-out infinite;
+}
+
+@keyframes rotateFade {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100%);
+  }
+  25%,
+  45% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+  }
+}
+
+.microscope-icon {
+  margin: 1rem;
+  animation: fadeIn 0.6s ease-out both;
+}
+
+.microscope-icon .microscope-svg {
+  width: 1000px;
+  height: 64px;
+  stroke: var(--accent, #a200ff);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header.glass.nav-blur {
+  overflow: visible;
 }
