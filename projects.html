@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Projects – Hicswa Community Microscopy</title>
+    <title>Projects – Hicswa Community Science</title>
     <link rel="icon" type="image/png" href="logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
@@ -15,13 +15,14 @@
   <body>
     <header class="glass nav-blur">
       <div class="container nav-container">
-        <h1 class="logo">Hicswa<span class="accent">Microscopy</span></h1>
+        <h1 class="logo">Hicswa<span class="accent"> Community Science</span></h1>
         <nav id="nav-menu">
           <a href="index.html#about">About</a>
           <a href="index.html#projects">Projects</a>
           <a href="index.html#resources">Resources</a>
           <a href="index.html#data">Data&nbsp;&amp;&nbsp;Code</a>
           <a href="index.html#governance">Governance</a>
+          <a href="members.html" class="active">Team</a>
         </nav>
         <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
       </div>
@@ -29,7 +30,9 @@
 
     <main class="section">
       <div class="container">
-        <h2 id="photonpeek" style="padding-top: 10px !important;">PhotonPeek – Photon Scanning Microscope</h2>
+        <h2 id="photonpeek" style="padding-top: 10px !important">
+          PhotonPeek – Photon Scanning Microscope
+        </h2>
         <p class="section-intro">
           Open hardware + software platform to democratize photonic imaging.
           Designed so a motivated high-schooler with
@@ -302,14 +305,72 @@ void loop() {
 
           <h3>✨ Features</h3>
           <ul>
-            <li>Electron geometry calculations</li>
-            <li>Predicts bond angles & models lone pairs via VSEPR</li>
-            <li>Dynamic dipole & polarity visualization</li>
-            <li>Custom particle engine with collision detection</li>
-            <li>Displays pi and sigma bonds</li>
-            <li>360° flying camera, floor grid & dynamic light shaders</li>
             <li>
-              Interactive drag, bond creation/deletion, stability indicator
+              Interactive Molecule Builder: Spawn atoms by symbol or input
+              chemical formulas; auto-generate resonance‑optimized structures
+              via a custom Resonance::Generator.
+            </li>
+            <li>
+              Force-Based Simulation: Bonds modeled as springs apply real-time
+              forces; atoms move under Verlet-like integration with damping and
+              collision against a bounding box and floor.
+            </li>
+            <li>
+              VSEPR Geometry Calculations: Dynamically compute lone‑pair
+              positions and ideal bond angles using energy‑minimization or fast
+              correction methods; display both real and ideal angles on-screen.
+            </li>
+            <li>
+              Formal Charge & Dipole Analysis: Calculate formal charges per
+              atom; compute net dipole moment from partial charges (fractional
+              based on electronegativity differences) and show polarity vectors
+              in 3D.
+            </li>
+            <li>
+              Lone Pair Visualization: Generate virtual dots for lone pairs
+              using tetrahedral or planar heuristics; update positions in real
+              time as bonds form or break.
+            </li>
+            <li>
+              Multiple Bond Orders: Display single, double, and triple bonds
+              with separate cylinders; count and render sigma and pi bonds.
+            </li>
+            <li>
+              Simulation Stability Indicator: Monitor VSEPR correction magnitude
+              and show a percentage stability gauge.
+            </li>
+            <li>
+              Extended Periodic Table: Look up atomic properties (atomic number,
+              mass, electronegativity, valence) from a built-in table for hover
+              tooltips and calculations.
+            </li>
+            <li>
+              Custom Particle Engine: Lightweight engine without external
+              physics libraries; supports fixed atoms and flight mode.
+            </li>
+            <li>
+              Flying Camera: Free‑roaming 360° camera with optional auto-follow
+              of molecule center.
+            </li>
+            <li>
+              Real-Time Interactions: Create/delete bonds (1–3 order), drag
+              atoms, and remove entire molecule on-the-fly.
+            </li>
+            <li>
+              Prebuilt Templates: One‑click generation of common molecules: H₂O,
+              CO₂, NH₃, CH₄, NO₂⁻, HCN, O₃, CN⁻.
+            </li>
+            <li>
+              Dynamic Lighting & Shaders: Phong‑style shaders for atoms and
+              bonds; raytracing module available (OpenGL 4.6 required).
+            </li>
+            <li>
+              ImGui-Based UI: Tabbed menu for main controls, prebuilt
+              selections, and usage instructions.
+            </li>
+            <li>
+              Testing Suite: Wide range of unit tests for core resonance
+              algorithms and features.
             </li>
           </ul>
 
@@ -323,10 +384,6 @@ void loop() {
           <h3>🚀 Getting Started</h3>
           <pre><code>git clone https://github.com/chromemilk/3D-Particle-Simulator.git
 cd 3D-Particle-Simulator
-mkdir build && cd build
-cmake ..
-make
-./Molecule\ Simulator
 </code></pre>
 
           <h3>📄 License</h3>
@@ -343,7 +400,7 @@ make
           </ul>
         </div>
         <div class="container glass block" style="margin-top: 2.4rem">
-          <h3>Demo</h3>
+          <h3>Demo (Version 4)</h3>
           <video
             controls
             autoplay
@@ -353,7 +410,8 @@ make
             style="max-width: 100%; border-radius: 12px"
           >
             <source
-              src="https://github.com/user-attachments/assets/a902c38a-9a0e-49d6-9f6f-f58ca07da89e"
+              src="https://github.com/user-attachments/assets/4c46024b-c0af-442c-bb21-6fc3e0394bcf
+"
               type="video/mp4"
             />
             Your browser does not support the video tag.
