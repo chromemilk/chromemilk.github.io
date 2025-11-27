@@ -1,266 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hicswa Community Science</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-  </head>
-  <body>
-    <header class="glass nav-blur">
-      <div class="container nav-container">
-        <h1 class="logo">
-          Hicswa <span class="accent">Community Science</span>
-        </h1>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Hicswa Community Science</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#mission">Mission</a>
+                <a href="#photonpeek">PhotonPeek</a>
+                <a href="#molecule">Molecule Engine</a>
+                <a href="#resources">Resources</a>
+                <a href="#team">Team</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-        <nav id="nav-menu">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#resources">Resources</a>
-          <a href="#data">Data&nbsp;&amp;&nbsp;Code</a>
-          <a href="#governance">Governance</a>
-          <a href="members.html" class="active">Team</a>
-        </nav>
-        <button id="hamburger" aria-label="Toggle navigation">&#9776;</button>
-      </div>
+    <header class="hero">
+        <div class="container">
+            <span class="pill">Open Source STEM</span>
+            <h1>Science, Shared and Simplified.</h1>
+            <p class="hero-sub">
+                We build affordable, educational tools for students and hobbyists. 
+                From scanning microscopes to chemical simulation engines, we believe technology should be accessible to every curious mind.
+            </p>
+            <div class="button-group">
+                <a href="#photonpeek" class="btn btn-primary">View Projects</a>
+                <a href="#mission" class="btn btn-secondary">Our Mission</a>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-      <div class="container hero-content">
-        <img src="logo.png" alt="Koen Hicswa" height="250" width="250" style="border-radius: 20%;;"/>
-
-        <h2 class="tagline">
-          <span class="text">Science, Shared&nbsp;and&nbsp;Simplified</span>
-        </h2>
-        <p class="subtitle">
-          Grass-roots microscopy, chemistry, and technology for every curious
-          mind.<br />
-          Open-source builds, free guides, and community-powered STEM.
-        </p>
-        <div class="btn-row">
-          <a href="#projects" class="btn-glow">Explore Projects ↓</a>
-          <a href="#team-intro" class="btn-glow">About Us ↓</a>
-          <a href="projects.html#photonpeek" class="btn-outline"
-            >PhotonPeek Details
-          </a>
-          <a href="projects.html#moleculesimulator" class="btn-outline"
-            >Molecule Engine</a
-          >
+    <section id="mission" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why we do this</h2>
+                <p>We are an initiative founded to bridge the gap between expensive laboratory equipment and high school education.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Accessibility</h3>
+                    <p>Scientific equipment shouldn't cost thousands. We design DIY microscopes and software that run on standard hardware and fit a student budget.</p>
+                </div>
+                <div class="card">
+                    <h3>Education</h3>
+                    <p>We provide comprehensive documentation, tutorials, and links to ensure anyone can replicate our builds and learn the engineering behind them.</p>
+                </div>
+                <div class="card">
+                    <h3>Community</h3>
+                    <p>We operate as an open collective. We share knowledge freely and support our local robotics team with hands-on learning, donations, and mentorship.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="team-intro" class="section">
-      <div class="container">
-        <h2>Our Team</h2>
-        <div id="name-rotator"></div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container glass block">
-        <h2>About&nbsp;Us</h2>
-        <p>
-          Hicswa Community Science is an initiative founded by
-          <strong>Koen Hicswa</strong>. We build affordable, open-source
-          microscopes, publish detailed guides, and want to sponsor local STEM
-          programs (including student robotics teams) to promote hands-on
-          learning.
-        </p>
-        <ul class="purpose-list">
-          <li>
-            🎯 <strong>Accessibility</strong> — DIY microscopes under $100, free
-            simulation engine
-          </li>
-          <li>
-            📚 <strong>Education</strong> — Free tutorials &amp; documentation.
-          </li>
-          <li>
-            🤝 <strong>Community</strong> — Shared knowledge &amp; support.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Featured&nbsp;Projects</h2>
-        <p class="section-intro">
-          Flagship open hardware &amp; software efforts pushing low-cost
-          photonic imaging forward.
-        </p>
-        <article class="project-card glass">
-          <h3>PhotonPeek – Photon Scanning Microscope</h3>
-          <div class="badges">
-            <span class="badge">Sub $100</span>
-            <span class="badge">&lt;10 µm</span>
-            <span class="badge">Open Source</span>
-            <span class="badge">Arduino</span>
-            <span class="badge">Python GUI</span>
-          </div>
-          <p class="project-summary">
-            Arduino-powered scanning microscope creating 2D &amp; 3D
-            light-intensity maps for high-school labs. Includes FFT sharpening,
-            deconvolution, AI super-res, CSV/PNG/3D exports.
-          </p>
-          <div class="btn-row">
-            <a class="btn-outline" href="projects.html#photonpeek"
-              >Learn&nbsp;More →</a
-            >
-            <a
-              class="btn-soft"
-              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
-              target="_blank"
-              rel="noopener"
-              >GitHub ↗</a
-            >
-          </div>
-        </article>
-        <p class="section-intro" style="margin-top: 2rem">
-          Advanced molecular simulation and visualizations tool for
-          computational chemistry.
-        </p>
-        <article class="project-card glass">
-          <h3>3D Molecular Visualization Engine</h3>
-          <div class="badges">
-            <span class="badge">Auto-Resonance</span>
-            <span class="badge">VSEPR Integration</span>
-            <span class="badge">118 Supported Elements</span>
-            <span class="badge">Ready to use out of the box</span>
-            <span class="badge">3D Rendering with OpenGL</span>
-          </div>
-          <p class="project-summary">
-            3D rendering engine for modeling molecules and chemical structures.
-            The program allows users to input a molecule and the engine will
-            determine its geometry, bond angles, resonance structures, and so
-            much more. It supports 118 elements and uses OpenGL for rendering.
-          </p>
-          <div class="btn-row">
-            <a class="btn-outline" href="projects.html#moleculesimulator"
-              >Learn&nbsp;More →</a
-            >
-            <a
-              class="btn-soft"
-              href="https://github.com/chromemilk/Molecule-Simulator"
-              target="_blank"
-              rel="noopener"
-              >GitHub ↗</a
-            >
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="resources" class="section">
-      <div class="container glass block">
-        <h2>Guides&nbsp;&amp;&nbsp;Resources</h2>
-        <p>
-          Build documents, wiring diagrams, 3D-print files, and lesson plans for
-          educators.
-        </p>
-        <ul class="link-list">
-          <li>
-            <a
-              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/README.md"
-              >Hardware Documents</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/analysis/GUI.py"
-              >Python GUI Source</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/RasterV2.ino"
-              >Firmware (Arduino Mega 2560)</a
-            >
-          </li>
-          <li>
-            <a href="https://sites.google.com/view/photonpeek/data?authuser=0"
-              >Example Scan Data</a
-            >
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="data" class="section">
-      <div class="container glass block">
-        <h2>Data&nbsp;&amp;&nbsp;Code - PhotonPeek</h2>
-        <p>
-          Browse real scan datasets, example notebooks, pipeline demos, and
-          community pull requests.
-        </p>
-        <div class="data-embed">
-          <iframe
-            src="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
-            frameborder="0"
-            scrolling="0"
-            width="120"
-            height="20"
-            title="GitHub"
-          ></iframe>
-          <p>
-            <a
-              href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
-              target="_blank"
-              rel="noopener"
-              >PhotonPeek Repository ↗</a
-            >
-          </p>
+    <section id="photonpeek" class="section bg-offset">
+        <div class="container">
+            <div class="split-layout">
+                <div class="content">
+                    <span class="accent-text">Hardware</span>
+                    <h2>PhotonPeek Microscope</h2>
+                    <p>A sub-$100 scanning microscope designed for imaging. PhotonPeek allows you to generate 2D and 3D intensity maps of samples using laser raster scanning.</p>
+                    <p>The system uses an Arduino for hardware control and a Python application for advanced signal processing, offering features usually reserved for university labs.</p>
+                    <p>***Please be aware that this is a work in progress build. The custom firmware and data analysis tools are functional, but build instructions are still underway. The open source parts are liked in the GitHub repository.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-val">&lt;10µm</span>
+                            <span class="stat-label">Resolution</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-val">$100</span>
+                            <span class="stat-label">Target BOM</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-val">2D</span>
+                            <span class="stat-label">Multi-Export Options</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <a href="https://github.com/chromemilk/PhotonPeek-scanning-microscope" target="_blank" class="btn btn-primary">GitHub Repository</a>
+                        <a href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/issues" target="_blank" class="btn btn-secondary">Report Issue</a>
+                    </div>
+                </div>
+                <div class="feature-block">
+                    <h3>Technical Capabilities</h3>
+                    <div class="grid-2-tight">
+                        <div class="feature-card">
+                            <h4>Signal Processing</h4>
+                            <p>Includes FFT edge boosting, contrast boosting, deconvolution, and noise reduction algorithms.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Data Protocol</h4>
+                            <p>Streamlined ASCII serial protocol for easy debugging and custom integrations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Hardware</h4>
+                            <p>Built on Arduino Mega 2560 with 650nm laser diode and standard photodiodes.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Output</h4>
+                            <p>Export heatmaps, raw CSV data, or generate marching-cubes 3D meshes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-    <section id="governance" class="section">
-      <div class="container glass block">
-        <h2>Governance</h2>
-        <p><strong>Name:</strong> Hicswa Community Science</p>
-        <p>
-          <strong>Purpose:</strong> Promote science accessibility via
-          community-built microscopes; publish open-source educational
-          materials; support local STEM education and robotics.
-        </p>
-        <p>
-          <strong>Membership:</strong> Open to anyone interested. No dues
-          currently. Membership is automatic upon request and includes consent
-          for names to be publicly listed on this website to acknowledge
-          participation.
-        </p>
-        <p>
-          <strong>Leadership:</strong> Founders: Koen Hicswa and Kaleb Wilcox.
-          Koen Hicswa currently serves as Organizer. Additional roles or
-          officers may be created and filled as needed by mutual agreement of
-          the founders or by member consensus.
-        </p>
-        <p><strong>Meetings:</strong> Held as needed (virtual or in-person).</p>
-        <p>
-          <strong>Finances:</strong> Operates as an unincorporated association.
-          The association is not a separate legal entity; any funds received
-          (including donations) are held and managed by the organizer on behalf
-          of the group and used solely to further its stated purpose. The
-          association may accept voluntary contributions and may make charitable
-          donations to support local STEM or educational programs.
-        </p>
-        <p>
-          <strong>Dissolution:</strong> Remaining assets to a nonprofit
-          educational org or local STEM program (e.g., school robotics team).
-        </p>
-        <p class="signature">Signed: Koen Hicswa – Effective Date: 7/26/2025</p>
-      </div>
     </section>
 
-    <footer class="footer glass">
-      <div class="container">
-        <p>&copy; 2025 Hicswa Community Science</p>
-      </div>
+    <section id="molecule" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="accent-text">Software</span>
+                <h2>3D Molecule Engine</h2>
+                <p>A real-time atom and molecule simulation written in C++ and OpenGL. Visualize chemical structures with accurate physics and resonance.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <div class="bento-card large">
+                    <h3>Physics & Interaction</h3>
+                    <p>Bonds are modeled as springs applying real-time forces. Atoms interact via Verlet-like integration, allowing you to drag, pull, and bond atoms dynamically while the system maintains stability.</p>
+                     <video controls autoplay loop muted playsinline style="max-width: 100%; border-radius: 12px">
+            <source
+              src="https://github.com/user-attachments/assets/4c46024b-c0af-442c-bb21-6fc3e0394bcf" type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+                  </div>
+                <div class="bento-card">
+                    <h3>VSEPR Geometry</h3>
+                    <p>The engine automatically calculates lone-pair positions and ideal bond angles, visualizing polarity vectors in real-time. It also allows use of spring-force equalization for bond angles.</p>
+                </div>
+                <div class="bento-card">
+                    <h3>Resonance</h3>
+                    <p>Auto-generates resonance structures and calculates formal charges per atom using user-set variables.</p>
+                </div>
+                <div class="bento-card wide">
+                    <h3>Tech Stack</h3>
+                    <p>Built with C++17, OpenGL 3.3+, GLFW, and GLM. Features a custom particle engine without external physics dependencies.</p>
+                </div>
+            </div>
+            <div class="center-action">
+                <a href="https://github.com/chromemilk/Molecule-Simulator" target="_blank" class="btn btn-outline">View Source Code</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="section bg-offset">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resources & Data</h2>
+                <p>Access our build guides, source code, and datasets.</p>
+            </div>
+            <div class="resource-list">
+                <a href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/README.md" class="resource-item">
+                    <div class="res-info">
+                        <strong>Hardware Documentation</strong>
+                        <span>Wiring diagrams and assembly</span>
+                    </div>
+                    <span class="arrow">&rarr;</span>
+                </a>
+                <a href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/analysis/GUI.py" class="resource-item">
+                    <div class="res-info">
+                        <strong>Python Analysis Suite</strong>
+                        <span>Source code for GUI</span>
+                    </div>
+                    <span class="arrow">&rarr;</span>
+                </a>
+                <a href="https://github.com/chromemilk/PhotonPeek-scanning-microscope/blob/main/RasterV2.ino" class="resource-item">
+                    <div class="res-info">
+                        <strong>Firmware</strong>
+                        <span>Arduino Mega 2560 Sketch</span>
+                    </div>
+                    <span class="arrow">&rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Team</h2>
+                <p>Hicswa Community Science is an unincorporated association dedicated to open education.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">KW</div>
+                    <div class="team-info">
+                        <h3>Kaleb Wilcox</h3>
+                        <p>Co-Founder</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">KH</div>
+                    <div class="team-info">
+                        <h3>Koen Hicswa</h3>
+                        <p>Founder & Lead Developer</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">AA</div>
+                    <div class="team-info">
+                        <h3>Andrea Arellano</h3>
+                        <p>Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="governance-note">
+                <p><strong>Governance:</strong> We operate transparently. Funds are managed solely to further our educational purpose. Assets upon dissolution are designated for nonprofit educational organizations. We are an unincorporated association.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hicswa Community Science.</p>
+        </div>
     </footer>
-  </body>
+</body>
 </html>
