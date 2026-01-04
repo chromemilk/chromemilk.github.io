@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molecule Simulator – Hicswa Community Science</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="logo"
+          >Hicswa <span class="accent">Community Science</span></a
+        >
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Mission</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="robotics.html">Robotics</a>
+          <a href="index.html#resources">Resources</a>
+          <a href="members.html">Team</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero fade-in-section">
+      <div class="container">
+        <span class="pill">Software Engine</span>
+        <h1>3D Molecule Simulator - PlanckSim</h1>
+        <p class="hero-sub">
+          A real-time 3D simulation written in modern C++ and OpenGL. Interact
+          with chemical structures, visualize VSEPR geometry, and simulate
+          atomic forces.
+        </p>
+        <div class="btn-row" style="justify-content: center">
+          <a
+            class="btn-primary"
+            href="https://github.com/chromemilk/Molecule-Simulator"
+            target="_blank"
+            >GitHub Repository ↗</a
+          >
+          <a class="btn-secondary" href="#demo">Watch Demo</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="section fade-in-section" id="demo" style="padding-top: 0">
+      <div class="container">
+        <div class="glass" style="padding: 1rem">
+          <video
+            controls
+            autoplay
+            loop
+            muted
+            playsinline
+            style="width: 100%; border-radius: 8px; display: block"
+          >
+            <source
+              src="https://github.com/user-attachments/assets/4c46024b-c0af-442c-bb21-6fc3e0394bcf"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in-section">
+      <div class="container">
+        <h2 style="margin-bottom: 2rem">Full Feature Set</h2>
+        <div class="grid-2">
+          <div>
+            <ul class="feature-list">
+              <li>
+                <strong>Interactive Molecule Builder:</strong> Spawn atoms by
+                symbol or chemical formula. Auto-generates resonance-optimized
+                structures via custom algorithms.
+              </li>
+              <li>
+                <strong>Force-Based Simulation:</strong> Bonds modeled as
+                springs applying real-time forces. Atoms move under Verlet-like
+                integration with collision.
+              </li>
+              <li>
+                <strong>VSEPR Geometry:</strong> Dynamically computes lone-pair
+                positions and ideal bond angles using energy-minimization.
+              </li>
+              <li>
+                <strong>Charge Analysis:</strong> Calculates formal charges per
+                atom and computes net dipole moment vectors in 3D.
+              </li>
+              <li>
+                <strong>Lone Pair Visualization:</strong> Generates virtual dots
+                for lone pairs using tetrahedral or planar heuristics.
+              </li>
+              <li>
+                <strong>Multiple Bond Orders:</strong> Renders single, double,
+                and triple bonds with distinct cylinder geometry (sigma/pi
+                counting).
+              </li>
+              <li>
+                <strong>Stability Indicator:</strong> Monitors VSEPR correction
+                magnitude to show a percentage stability gauge.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="feature-list">
+              <li>
+                <strong>Extended Periodic Table:</strong> Built-in lookup for
+                atomic mass, electronegativity, and valence for 118 elements.
+              </li>
+              <li>
+                <strong>Custom Particle Engine:</strong> Lightweight engine
+                without external physics libraries. Supports "Flight Mode".
+              </li>
+              <li>
+                <strong>Flying Camera:</strong> Free-roaming 360° camera with
+                optional auto-follow of molecule center.
+              </li>
+              <li>
+                <strong>Real-Time Interactions:</strong> Drag atoms, break/form
+                bonds, and delete structures on-the-fly.
+              </li>
+              <li>
+                <strong>Prebuilt Templates:</strong> One-click generation of
+                common molecules (H₂O, CO₂, NH₃, etc.).
+              </li>
+              <li>
+                <strong>Dynamic Lighting:</strong> Phong-style shaders for
+                atoms/bonds with optional raytracing module.
+              </li>
+              <li>
+                <strong>ImGui Interface:</strong> Tabbed menus for controls and
+                properties.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in-section bg-offset">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card">
+            <h3>Tech Stack</h3>
+            <div class="badges">
+              <span class="badge">C++17</span>
+              <span class="badge">OpenGL 3.3+</span>
+              <span class="badge">CMake</span>
+            </div>
+            <ul class="feature-list">
+              <li><strong>GLFW:</strong> Windowing and input handling</li>
+              <li><strong>GLAD:</strong> OpenGL function loader</li>
+              <li><strong>GLM:</strong> Mathematics (vectors/matrices)</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem">
+              Acknowledgements to LearnOpenGL and TheCherno for their excellent
+              C++ graphics tutorials.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Getting Started</h3>
+            <p>Clone the repository to build locally.</p>
+            <pre><code>git clone https://github.com/chromemilk/3D-Particle-Simulator.git
+cd 3D-Particle-Simulator</code></pre>
+            <div class="btn-row">
+              <a
+                href="https://github.com/chromemilk/Molecule-Simulator"
+                class="btn-outline"
+                >View License (MIT)</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Hicswa Community Science.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhotonPeek – Hicswa Community Science</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="logo"
+          >Hicswa <span class="accent">Community Science</span></a
+        >
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Mission</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="robotics.html">Robotics</a>
+          <a href="index.html#resources">Resources</a>
+          <a href="members.html">Team</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero fade-in-section">
+      <div class="container">
+        <span class="pill">Hardware Project</span>
+        <h1>PhotonPeek Microscope</h1>
+        <p class="hero-sub">
+          Open hardware + software platform to democratize photonic imaging.
+          Designed so a motivated high-schooler with a
+          <strong>&lt;$100</strong> budget can assemble, calibrate, and generate
+          quantitative 2D / 3D intensity maps.
+        </p>
+        <div class="btn-row" style="justify-content: center">
+          <a
+            class="btn-primary"
+            href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
+            target="_blank"
+            >GitHub Repository ↗</a
+          >
+          <a class="btn-secondary" href="#details">View Details</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="section fade-in-section" id="details" style="padding-top: 0">
+      <div class="container">
+        <div class="card" style="margin-bottom: 2rem">
+          <h3>Overview</h3>
+          <div class="badges">
+            <span class="badge">Arduino</span>
+            <span class="badge">Python GUI</span>
+            <span class="badge">FFT</span>
+            <span class="badge">Deconvolution</span>
+            <span class="badge">AI SR</span>
+          </div>
+          <p>
+            PhotonPeek performs a raster scan using either manual stage shifts
+            or stepper-driven motion. A 650 nm laser spot is steered onto the
+            sample and the reflected or transmitted intensity is captured by a
+            photodiode. The Arduino Mega streams raw readings tagged with
+            coordinates; the Python application accumulates, averages
+            (samples-per-pixel oversampling), then executes a modular
+            enhancement pipeline.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="feature-block">
+            <h3>Core Goals</h3>
+            <ul class="feature-list">
+              <li>
+                <strong>Affordability:</strong> Keep BOM under $100 (excluding
+                optional motors).
+              </li>
+              <li>
+                <strong>Transparency:</strong> Every algorithm documented;
+                adjustable parameters.
+              </li>
+              <li>
+                <strong>Extensibility:</strong> Modular processing pipeline for
+                custom stages.
+              </li>
+              <li>
+                <strong>Education:</strong> Teachable codebase—tidy, commented,
+                minimal dependencies.
+              </li>
+            </ul>
+          </div>
+          <div class="feature-block">
+            <h3>Performance Targets</h3>
+            <ul class="feature-list">
+              <li>&lt;10 µm effective lateral sampling (high mode)</li>
+              <li>Real-time preview refresh without blocking acquisition</li>
+              <li>Configurable oversampling for SNR tradeoff</li>
+              <li>
+                Deterministic scan reproducibility (optional stepper control)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in-section bg-offset">
+      <div class="container">
+        <h3>Parts Manifest (Condensed)</h3>
+        <p>
+          See <code>hardware/</code> in the repo for STL files and wiring
+          diagrams.
+        </p>
+        <div class="parts-grid" style="margin-top: 1.5rem">
+          <div class="part">
+            <h4>Laser Diode 650nm</h4>
+            <p>5mW. Stable red illumination; safe, inexpensive.</p>
+          </div>
+          <div class="part">
+            <h4>Photodiode Module</h4>
+            <p>Analog voltage proportional to intensity; feeds A0.</p>
+          </div>
+          <div class="part">
+            <h4>Penta-Prism</h4>
+            <p>Fixed 90° deviation; alignment simplicity.</p>
+          </div>
+          <div class="part">
+            <h4>Arduino Mega 2560</h4>
+            <p>Multiple analog inputs & flash space.</p>
+          </div>
+          <div class="part">
+            <h4>Stepper Motors</h4>
+            <p>Automated XY(Z) scanning (optional upgrade).</p>
+          </div>
+          <div class="part">
+            <h4>Objective Lens</h4>
+            <p>Spot shaping + resolution improvement.</p>
+          </div>
+          <div class="part">
+            <h4>3D-Printed Mounts</h4>
+            <p>Rigid, repeatable mechanical geometry.</p>
+          </div>
+          <div class="part">
+            <h4>Python Host PC</h4>
+            <p>Acquisition + processing pipeline.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in-section">
+      <div class="container">
+        <div class="split-layout">
+          <div>
+            <h3>Processing Flow</h3>
+            <p>The Python pipeline executes the following steps:</p>
+            <ol class="flow-steps">
+              <li>
+                <strong>Accumulate:</strong> Sum raw counts into voxel grid;
+                maintain hit counters.
+              </li>
+              <li>
+                <strong>Average:</strong> Divide sums by counts → floating
+                intensity.
+              </li>
+              <li>
+                <strong>Flat-Field (Optional):</strong> Divide by normalized
+                gain map.
+              </li>
+              <li><strong>Normalize:</strong> Scale to [0,1].</li>
+              <li>
+                <strong>Edge Boost (FFT):</strong> High-boost via low-freq
+                subtraction.
+              </li>
+              <li>
+                <strong>Deconvolution:</strong> Richardson–Lucy or Auto Wiener.
+              </li>
+              <li><strong>Contrast:</strong> CLAHE for local detail.</li>
+              <li>
+                <strong>Upscale:</strong> Interp / Rescale / DNN SR model.
+              </li>
+              <li>
+                <strong>Export:</strong> CSV, PNG, 3D OBJ, or TIFF stacks.
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h3>Serial Data Protocol</h3>
+            <p>
+              The acquisition layer is line-oriented ASCII for clarity &
+              debugging:
+            </p>
+            <pre>
+CONFIG,&lt;mode&gt;,&lt;precision&gt;,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;spp&gt;
+HEADER,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;spp&gt;
+DATA,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;value&gt;</pre
+            >
+            <p style="margin-top: 1rem; font-size: 0.9rem">
+              <strong>CONFIG</strong> sets the session.
+              <strong>HEADER</strong> echoes geometry for host validation. Each
+              <strong>DATA</strong> line is streamed as soon as the analog read
+              settles, enabling overlapping compute & I/O.
+            </p>
+
+            <h3 style="margin-top: 3rem">Roadmap</h3>
+            <ul class="feature-list">
+              <li>
+                <strong>v1.0:</strong> Core acquisition + basic processing.
+              </li>
+              <li>
+                <strong>v1.1:</strong> Stepper integration + automated scans.
+              </li>
+              <li><strong>v1.2:</strong> Deconvolution + FFT enhancements.</li>
+              <li><strong>v2.0:</strong> AI super-resolution models.</li>
+              <li><strong>v2.1:</strong> Multi-wavelength support.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Hicswa Community Science.</p>
+      </div>
+    </footer>
+  </body>
+</html>
