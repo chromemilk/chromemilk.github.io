@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6032 Auto-Scout – Hicswa Community Science</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+
+    <style>
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        object-fit: cover; /* Ensures images fill the box nicely */
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+      }
+
+      /* Navigation Arrows */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+      }
+
+      .carousel-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .prev {
+        left: 20px;
+      }
+      .next {
+        right: 20px;
+      }
+
+      /* Dots at bottom */
+      .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .dot.active {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="logo"
+          >Hicswa <span class="accent">Community Science</span></a
+        >
+        <div class="nav-links" id="nav-links">
+          <a href="index.html">Mission</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="robotics.html">Robotics</a>
+          <a href="index.html#resources">Resources</a>
+          <a href="members.html">Team</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero fade-in-section">
+      <div class="container">
+        <span class="pill">Data Analytics</span>
+        <h1>6032 Auto-Scout</h1>
+        <p class="hero-sub">
+          A Python-based FRC strategy engine. Leverages The Blue Alliance API
+          and Statbotics to generate predictive rankings, compatibility "Fit
+          Scores", and Monte Carlo match simulations.
+        </p>
+        <div class="btn-row" style="justify-content: center">
+          <a
+            class="btn-primary"
+            href="https://github.com/frcteam6032/Match-Analysis"
+            target="_blank"
+            >GitHub Repository ↗</a
+          >
+          <a class="btn-secondary" href="#features">View Features</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="section fade-in-section" id="demo" style="padding-top: 0">
+      <div class="container">
+        <div class="glass" style="padding: 1rem">
+          <div class="carousel-container" id="carousel">
+            <img
+              src="image.png"
+              class="carousel-slide active"
+              alt="Auto-Scout Interface Main"
+            />
+            <img
+              src="image2.png"
+              class="carousel-slide"
+              alt="Mind Map Visualization"
+            />
+            <img src="image3.png" class="carousel-slide" alt="Strategy Graph" />
+
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">
+              &#10094;
+            </button>
+            <button class="carousel-btn next" onclick="moveSlide(1)">
+              &#10095;
+            </button>
+
+            <div class="carousel-indicators">
+              <span class="dot active" onclick="setSlide(0)"></span>
+              <span class="dot" onclick="setSlide(1)"></span>
+              <span class="dot" onclick="setSlide(2)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in-section" id="features">
+      <div class="container">
+        <h2 style="margin-bottom: 2rem">Core Capabilities</h2>
+        <div class="grid-2">
+          <div>
+            <ul class="feature-list">
+              <li>
+                <strong>TBA & Statbotics Integration:</strong> Automatically
+                fetches event data, match breakdowns, and EPA metrics.
+              </li>
+              <li>
+                <strong>Fit Score Algorithm:</strong> Custom ranking system
+                calculating team compatibility using Z-score statistical
+                analysis.
+              </li>
+              <li>
+                <strong>Dual Strategy Generation:</strong> Simulates matches
+                between alliances to predict win probability and suggest roles.
+              </li>
+              <li>
+                <strong>Monte Carlo Simulation:</strong> Uses historical scoring
+                variance to run thousands of match iterations.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="feature-list">
+              <li>
+                <strong>JSON Mind Map:</strong> Interactive visualization of
+                nested API data for deep dives into match breakdowns.
+              </li>
+              <li>
+                <strong>Modern UI:</strong> Built with <code>ttkbootstrap</code>
+                supporting both Light (Minty) and Dark (Darkly) themes.
+              </li>
+              <li>
+                <strong>CSV Export/Import:</strong> Seamlessly integrate pit
+                scouting data and export analysis results.
+              </li>
+              <li>
+                <strong>Performance Graphs:</strong> Generates bar charts
+                comparing team performance deltas against the field baseline.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in-section bg-offset">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card">
+            <h3>Tech Stack</h3>
+            <div class="badges">
+              <span class="badge">Python 3.10+</span>
+              <span class="badge">Pandas</span>
+              <span class="badge">TtkBootstrap</span>
+            </div>
+            <ul class="feature-list">
+              <li>
+                <strong>NumPy/SciPy:</strong> Statistical modeling & Z-scores
+              </li>
+              <li><strong>Matplotlib:</strong> Embedded data visualization</li>
+              <li><strong>Requests:</strong> REST API handling</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem">
+              Data provided by The Blue Alliance and Statbotics.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Deployment</h3>
+            <p>Clone and install dependencies to run the analyzer.</p>
+            <pre><code>git clone https://github.com/YourRepo/Auto-Scout.git
+ python Main.py</code></pre>
+            <div class="btn-row">
+              <a href="#" class="btn-outline">View License (MIT)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Hicswa Community Science.</p>
+      </div>
+    </footer>
+
+    <script>
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".carousel-slide");
+      const dots = document.querySelectorAll(".dot");
+      let autoPlayTimer;
+
+      function showSlide(n) {
+        if (n >= slides.length) slideIndex = 0;
+        if (n < 0) slideIndex = slides.length - 1;
+
+        // Reset all
+        slides.forEach((slide) => slide.classList.remove("active"));
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        // Activate current
+        slides[slideIndex].classList.add("active");
+        dots[slideIndex].classList.add("active");
+      }
+
+      function moveSlide(n) {
+        slideIndex += n;
+        showSlide(slideIndex);
+        resetTimer();
+      }
+
+      function setSlide(n) {
+        slideIndex = n;
+        showSlide(slideIndex);
+        resetTimer();
+      }
+
+      function resetTimer() {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = setInterval(() => moveSlide(1), 5000);
+      }
+
+      // Initialize
+      autoPlayTimer = setInterval(() => moveSlide(1), 5000);
+    </script>
+  </body>
+</html>
