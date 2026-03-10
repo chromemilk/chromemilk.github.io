@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects – Hicswa Community Science</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -36,8 +36,7 @@
       <div class="container">
         <h1>Our Projects</h1>
         <p class="hero-sub" style="margin: 0">
-          Explore our flagship open hardware and software efforts pushing
-          low-cost photonic imaging and molecular simulation forward.
+          What we've built so far, with full source code and documentation.
         </p>
       </div>
     </div>
@@ -53,10 +52,11 @@
             </div>
             <h3>PhotonPeek – Photon Scanning Microscope</h3>
             <p class="project-summary">
-              Arduino-powered scanning microscope creating 2D & 3D
-              light-intensity maps for high-school labs. Includes FFT
-              sharpening, deconvolution, AI super-resolution, and multi-format
-              exports.
+              Arduino-controlled scanning microscope that generates 2D and 3D
+              intensity maps. A 650nm laser rasters over a sample while a
+              photodiode captures reflected intensity at each coordinate. A
+              Python GUI handles acquisition, FFT sharpening, deconvolution,
+              and optional neural upscaling.
             </p>
             <ul class="feature-list">
               <li>Laser raster scanning methodology</li>
@@ -82,9 +82,10 @@
             </div>
             <h3>3D Molecular Visualization Engine</h3>
             <p class="project-summary">
-              A high-performance 3D rendering engine for modeling molecules.
-              Input chemical formulas to determine geometry, bond angles, and
-              resonance structures dynamically.
+              A 3D molecule viewer built with C++ and OpenGL. Enter a formula
+              or build atom by atom — it calculates VSEPR geometry, bond
+              orders, formal charges, and dipole moments on the fly without any
+              external physics library.
             </p>
             <ul class="feature-list">
               <li>Real-time force-based physics</li>
@@ -140,7 +141,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2025 Hicswa Community Science.</p>
+        <p>&copy; 2026 Hicswa Community Science.</p>
       </div>
     </footer>
   </body>

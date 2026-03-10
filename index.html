@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hicswa Community Science</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -13,8 +13,8 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="container nav-content">
-        <a href="index.html" class="logo"
+        <div class="container nav-content">
+          <a href="index.html" class="logo"
           >Hicswa <span class="accent">Community Science</span></a
         >
         <div class="nav-links" id="nav-links">
@@ -35,11 +35,11 @@
     <header class="hero fade-in-section">
       <div class="container">
         <span class="pill">Open Source STEM</span>
-        <h1>Science, Shared and Simplified.</h1>
+        <h1>Science, Shared and Simplified</h1>
         <p class="hero-sub">
-          We build affordable, educational tools for students and hobbyists.
-          From scanning microscopes to chemical simulation engines, we believe
-          technology should be accessible to every curious mind.
+          We build scientific hardware and software from scratch — a scanning
+          microscope, a molecule simulator, a match analysis tool. Everything
+          is open source and documented so you can replicate it yourself.
         </p>
         <div
           class="button-group"
@@ -60,24 +60,23 @@
             <h3>Accessibility</h3>
             <p>
               Scientific equipment shouldn't cost thousands. We design DIY
-              microscopes, software, and electrical builds that run on standard
-              hardware and fit a student budget.
+              microscopes, software, and electronics that run on standard
+              hardware and fit under a student's budget.
             </p>
           </div>
           <div class="card">
-            <h3>Education</h3>
+            <h3>Documentation</h3>
             <p>
-              We provide comprehensive documentation, buy-lists, and links to
-              ensure anyone can replicate our builds and learn the engineering
-              behind them.
+              Every project includes parts lists, wiring diagrams, and
+              commented source code so you can build it yourself, not just
+              read about it.
             </p>
           </div>
           <div class="card">
             <h3>Community</h3>
             <p>
-              We operate as an open collective. We share knowledge freely and
-              support our local robotics team with donations and student
-              involvement.
+              We're a small group of students in Dayton, Ohio. We put
+              everything online and donate to our high school's robotics team.
             </p>
           </div>
         </div>
@@ -92,9 +91,9 @@
             <span class="pill">Hardware, Software, Firmware</span>
             <h3>PhotonPeek Microscope</h3>
             <p>
-              A sub-$100 scanning microscope designed for imaging. Generate 2D
-              and 3D intensity maps of samples using laser raster scanning and
-              Python processing.
+              A sub-$100 scanning microscope. A 650nm laser rasters across a
+              sample, a photodiode reads the reflected intensity, and a Python
+              app reconstructs 2D and 3D images from the coordinates.
             </p>
             <div class="stats-grid">
               <div class="stat-item">
@@ -115,9 +114,9 @@
             <span class="pill">Software</span>
             <h3>PlanckSim</h3>
             <p>
-              Real-time physics simulation for chemical structures. Build
-              molecules, visualize VSEPR geometry, and interact with bonds in a
-              3D environment.
+              A 3D molecule builder written in C++ and OpenGL. Type a chemical
+              formula and it constructs the structure, calculates VSEPR
+              geometry, and lets you drag atoms around in real time.
             </p>
             <div class="stats-grid">
               <div class="stat-item">
@@ -166,13 +165,12 @@
 
           <div class="card">
             <span class="pill">Software</span>
-            <h3>FRC Data Analytics</h3>
+            <h3>FRC Auto-Scout</h3>
             <p>
-              A data analytics platform for FIRST Robotics Competition teams to
-              analyze match performance, strategize game plays, and optimize
-              robot designs using historical data and real-time inputs. It
-              allows teams to auto-generate match strategy, determine win
-              probabilities, and scout opponents effectively.
+              A scouting tool for FRC teams. It pulls live event data from The
+              Blue Alliance and Statbotics, scores team compatibility for
+              alliance selection, and models match outcomes using Monte Carlo
+              simulation.
             </p>
             <div class="stats-grid">
               <div class="stat-item">
@@ -234,7 +232,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2025 Hicswa Community Science.</p>
+        <p>&copy; 2026 Hicswa Community Science.</p>
       </div>
     </footer>
   </body>
