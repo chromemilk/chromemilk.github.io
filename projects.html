@@ -1,148 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects – Hicswa Community Science</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="container nav-content">
-        <a href="index.html" class="logo"
-          >Hicswa <span class="accent">Community Science</span></a
-        >
-        <div class="nav-links" id="nav-links">
-          <a href="index.html">Mission</a>
-          <a href="projects.html" class="active">Projects</a>
-          <a href="robotics.html">Robotics</a>
-          <a href="index.html#resources">Resources</a>
-          <a href="members.html">Team</a>
-        </div>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </nav>
 
-    <div class="section fade-in-section" style="padding-bottom: 2rem">
-      <div class="container">
-        <h1>Our Projects</h1>
-        <p class="hero-sub" style="margin: 0">
-          What we've built so far, with full source code and documentation.
-        </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – Hicswa Community Science</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Mission</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="robotics.html">Robotics</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="members.html">Team</a>
+      </div>
+      <div class="language-switcher">
+        <label for="language-select" class="sr-only">Translate page</label>
+        <select id="language-select" aria-label="Translate page">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="ru">Russian</option>
+          <option value="zh-CN">Chinese</option>
+          <option value="fr">French</option>
+        </select>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="section fade-in-section" style="padding-bottom: 2rem">
+    <div class="container">
+      <h1>Our Projects</h1>
+      <p class="hero-sub" style="margin: 0">
+        What we've built so far, with full source code and documentation.
+      </p>
+    </div>
+  </div>
+
+  <div class="section fade-in-section" style="padding-top: 0">
+    <div class="container">
+      <div class="grid-2">
+        <article class="project-card">
+          <div class="badges">
+            <span class="badge">Hardware</span>
+            <span class="badge">Sub $100</span>
+            <span class="badge">&lt;10 µm</span>
+          </div>
+          <h3>PhotonPeek – Photon Scanning Microscope</h3>
+          <p class="project-summary">
+            Arduino-controlled scanning microscope that generates 2D and 3D
+            intensity maps. A 650nm laser rasters over a sample while a
+            photodiode captures reflected intensity at each coordinate. A
+            Python GUI handles acquisition, FFT sharpening, deconvolution,
+            and optional neural upscaling.
+          </p>
+          <ul class="feature-list">
+            <li>Laser raster scanning methodology</li>
+            <li>Python-based GUI for real-time visualization</li>
+            <li>Export to CSV, PNG, and OBJ</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn-primary" href="photonpeek.html">Full Details</a>
+            <a class="btn-secondary" href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
+              target="_blank">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="badges">
+            <span class="badge">Software</span>
+            <span class="badge">C++ / OpenGL</span>
+            <span class="badge">VSEPR</span>
+          </div>
+          <h3>3D Molecular Visualization Engine</h3>
+          <p class="project-summary">
+            A 3D molecule viewer built with C++ and OpenGL. Enter a formula
+            or build atom by atom — it calculates VSEPR geometry, bond
+            orders, formal charges, and dipole moments on the fly without any
+            external physics library.
+          </p>
+          <ul class="feature-list">
+            <li>Real-time force-based physics</li>
+            <li>Supports 118 elements</li>
+            <li>Auto-Resonance and VSEPR calculation</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn-primary" href="moleculesimulator.html">Full Details</a>
+            <a class="btn-secondary" href="https://github.com/chromemilk/Molecule-Simulator" target="_blank">GitHub
+              ↗</a>
+          </div>
+        </article>
+
+
+        <article class="project-card">
+          <div class="badges">
+            <span class="badge">Software</span>
+            <span class="badge">Data Analysis</span>
+            <span class="badge">Python</span>
+          </div>
+          <h3>FRC Auto-Scouter</h3>
+          <p class="project-summary">
+            A Python-based FRC strategy engine. Leverages The Blue Alliance API
+            and Statbotics to generate predictive rankings, compatibility "Fit
+            Scores", and Monte Carlo match simulations. (updated for 2026)
+          </p>
+          <ul class="feature-list">
+            <li>Team Fit Score Algorithm</li>
+            <li>Match Prediction & Simulation</li>
+            <li>Easy to use interface</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn-primary" href="frcanalysis.html">Full Details</a>
+            <a class="btn-secondary" href="https://github.com/frcteam6032/Match-Analysis" target="_blank">GitHub ↗</a>
+          </div>
+        </article>
       </div>
     </div>
+  </div>
 
-    <div class="section fade-in-section" style="padding-top: 0">
-      <div class="container">
-        <div class="grid-2">
-          <article class="project-card">
-            <div class="badges">
-              <span class="badge">Hardware</span>
-              <span class="badge">Sub $100</span>
-              <span class="badge">&lt;10 µm</span>
-            </div>
-            <h3>PhotonPeek – Photon Scanning Microscope</h3>
-            <p class="project-summary">
-              Arduino-controlled scanning microscope that generates 2D and 3D
-              intensity maps. A 650nm laser rasters over a sample while a
-              photodiode captures reflected intensity at each coordinate. A
-              Python GUI handles acquisition, FFT sharpening, deconvolution,
-              and optional neural upscaling.
-            </p>
-            <ul class="feature-list">
-              <li>Laser raster scanning methodology</li>
-              <li>Python-based GUI for real-time visualization</li>
-              <li>Export to CSV, PNG, and OBJ</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn-primary" href="photonpeek.html">Full Details</a>
-              <a
-                class="btn-secondary"
-                href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
-                target="_blank"
-                >GitHub ↗</a
-              >
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="badges">
-              <span class="badge">Software</span>
-              <span class="badge">C++ / OpenGL</span>
-              <span class="badge">VSEPR</span>
-            </div>
-            <h3>3D Molecular Visualization Engine</h3>
-            <p class="project-summary">
-              A 3D molecule viewer built with C++ and OpenGL. Enter a formula
-              or build atom by atom — it calculates VSEPR geometry, bond
-              orders, formal charges, and dipole moments on the fly without any
-              external physics library.
-            </p>
-            <ul class="feature-list">
-              <li>Real-time force-based physics</li>
-              <li>Supports 118 elements</li>
-              <li>Auto-Resonance and VSEPR calculation</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn-primary" href="moleculesimulator.html"
-                >Full Details</a
-              >
-              <a
-                class="btn-secondary"
-                href="https://github.com/chromemilk/Molecule-Simulator"
-                target="_blank"
-                >GitHub ↗</a
-              >
-            </div>
-          </article>
-
-          
-          <article class="project-card">
-            <div class="badges">
-              <span class="badge">Software</span>
-              <span class="badge">Data Analysis</span>
-              <span class="badge">Python</span>
-            </div>
-            <h3>FRC Auto-Scouter</h3>
-            <p class="project-summary">
-              A Python-based FRC strategy engine. Leverages The Blue Alliance API
-              and Statbotics to generate predictive rankings, compatibility "Fit
-              Scores", and Monte Carlo match simulations.
-            </p>
-            <ul class="feature-list">
-              <li>Team Fit Score Algorithm</li>
-              <li>Match Prediction & Simulation</li>
-              <li>Easy to use interface</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn-primary" href="frcanalysis.html"
-                >Full Details</a
-              >
-              <a
-                class="btn-secondary"
-                href="https://github.com/frcteam6032/Match-Analysis"
-                target="_blank"
-                >GitHub ↗</a
-              >
-            </div>
-          </article>
-        </div>
-      </div>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Hicswa Community Science.</p>
     </div>
+  </footer>
+</body>
 
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2026 Hicswa Community Science.</p>
-      </div>
-    </footer>
-  </body>
 </html>
