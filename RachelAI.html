@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molecule Simulator – Hicswa Community Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Mission</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="robotics.html">Robotics</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="members.html">Team</a>
+            </div>
+            <div class="language-switcher">
+                <label for="language-select" class="sr-only">Translate page</label>
+                <select id="language-select" aria-label="Translate page">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="ru">Russian</option>
+                    <option value="zh-CN">Chinese</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero fade-in-section">
+        <div class="container">
+            <span class="pill">Full Stack Service</span>
+            <h1>Live AI Assistance - RachelAI</h1>
+            <p class="hero-sub">
+                Take any regular pair of glasses and upgrade them with an ESP-32
+                camera, and a microphone for a voice
+                controlled AI experience. On-device processing for real-time object
+                recognition, scene description, and voice interaction.
+            </p>
+            <div class="btn-row" style="justify-content: center">
+                <a class="btn-primary" href="https://github.com/chromemilk/Rachel-Vision" target="_blank">GitHub
+                    Repository
+                    ↗</a>
+                <a class="btn-secondary" href="#demo">Watch Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="section fade-in-section" id="demo" style="padding-top: 0">
+        <div class="container">
+            <div class="glass" style="padding: 1rem">
+                <video controls autoplay loop muted playsinline
+                    style="width: 100%; border-radius: 8px; display: block;">
+                    <source src="RachelMovie.MOV" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p></p>
+            <div class="container">
+                <div class="glass" style="padding: 1rem">
+
+                    <img src="RachelPicture.jpg" alt="RachelAI Demo"
+                        style="width: 100%; border-radius: 8px; margin-top: 1rem" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section fade-in-section">
+        <div class="container">
+            <h2 style="margin-bottom: 2rem">Full Feature Set & Required Materials</h2>
+
+            <div class="grid-2">
+                <div>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>Camera Integration:</strong> AI models can use attached camera for real-time
+                            object
+                            recognition, scene description, and text reading.
+                        </li>
+                        <li>
+                            <strong>General AI Capabilities:</strong> Can solve complex problems, answer questions,
+                            and
+                            generate content based on user prompts. Similar performance to the ChatGPT 5 Base Model
+                        </li>
+                        <li>
+                            <strong>Speaker:</strong> Talks back to you for responses
+                        </li>
+                        <li>
+                            <strong>Wireless:</strong> All compnents are independant of each other and are conneted
+                            via
+                            a central network
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="feature-list">
+                        <li><strong>ESP-32 CAM Module:</strong> $10 - $15</li>
+                        <li><strong>Microcontroller:</strong> ESP-32 S3 $10 - $20</li>
+                        <li><strong>Microphone:</strong> $5 - $10</li>
+                        <li><strong>Power Source:</strong> Small LiPo battery or battery pack, $10 - $20</li>
+                        <li><strong>Glasses:</strong> Cheap blue light or plastic glasses, $5 - $15</li>
+                        <li><strong>ESP-32 CAM -> Micro USB Adapter:</strong> $5 - $10</li>
+                        <li><strong>Miscellaneous:</strong> Wires, connectors, soldering equipment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section fade-in-section bg-offset">
+        <div class="container">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Buy List</h3>
+                    <div class="badges">
+                        <p>1. <a href="https://www.amazon.com/AiTrip-ESP32-CAM-Bluetooth-Module-Development/dp/B081MT8973"
+                                target="_blank">ESP-32 CAM Module</a></p>
+                        <p>2. <a href="https://www.amazon.com/Advanced-Omnidirectional-Microphone-Conference-Auditory/dp/B0GMJ1KVT1"
+                                target="_blank">Advanced Omnidirectional Microphone</a></p>
+                        <p>3. <a href="https://www.amazon.com/HiLetgo-CP2102-Converter-Adapter-Downloader/dp/B00LODGRV8"
+                                target="_blank">ESP-32 CAM -> Micro USB Adapter</a></p>
+                        <p>4. <a href="https://www.amazon.com/Hosyond-Development-Dual-Mode-Compatible-ESP32-S3-WROOM-1/dp/B0F5QCK6X5/ref=sr_1_3?sr=8-3"
+                                target="_blank">ESP-32 S3 Module</a></p>
+                    </div>
+                </div>
+                <div class="grid-2">
+
+                    <div class="card">
+                        <h3>Getting Started</h3>
+                        <p>Clone the repository to build locally.</p>
+                        <pre><code>git clone https://github.com/chromemilk/Rachel-Vision</code></pre>
+                        <div class="btn-row">
+                            <a href="https://github.com/chromemilk/Rachel-Vision" class="btn-outline">View License
+                                (MIT)</a>
+                        </div>
+                        <p></p>
+                        <div>
+                            <h3>Build & Programming Instructions</h3>
+                            <p>(pre-build) download Arduino IDE and related packages</p>
+                            <p>1. Obtain required materials (listed above)</p>
+                            <p>2. Wire microphone to the ESP-32 S3 Module according to the firmware code (remember L/R
+                                should be tied to GND)</p>
+                            <p>3. Wire ESP-32 CAM to the adapter according to the firmware code</p>
+                            <p>4. Flash ESP-32 S3 Module with the provided "mic" firmware</p>
+                            <p>5. Flash ESP-32 CAM Module with the provided "cam" firmware</p>
+                            <p>6. Attach hardware to glasses via tape or 3D-printed parts</p>
+                            <h3>Usage Instructions</h3>
+                            <p>(pre-use) Obtain relevant API keys (look in Python script) and place them in a .env file
+                                in
+                                the local directory</p>
+                            <p>1. Have a local network set up for all the devices to connect to</p>
+                            <p>2. Power on the Rachel Vision device</p>
+                            <p>3. Run provided server Python script</p>
+                            <p>4. Interact with the device using the camera and microphone (say "Rachel, what is this?"
+                                to
+                                trigger a response)</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Hicswa Community Science.</p>
+            </div>
+        </footer>
+</body>
+
+</html>
