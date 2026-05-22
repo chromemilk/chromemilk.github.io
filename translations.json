@@ -3,6 +3,7 @@
                "common":  {
                               "navMission":  "Mision",
                               "navProjects":  "Proyectos",
+                              "navResearchPapers":  "Investigación",
                               "navRobotics":  "Robotica",
                               "navResources":  "Recursos",
                               "navTeam":  "Equipo",
@@ -80,7 +81,23 @@
                                 "project3Feature1":  "Algoritmo Team Fit Score",
                                 "project3Feature2":  "Prediccion y simulacion de partidos",
                                 "project3Feature3":  "Interfaz facil de usar",
-                                "project3Btn1":  "Detalles Completos"
+                                "project3Btn1":  "Detalles Completos",
+                                "project4Title":  "VectorSIM",
+                                "project4Summary":  "Un proyecto de simulacion basado en vectores para explorar el movimiento de campos, la visualizacion de fuerzas y la dinamica interactiva.",
+                                "project4Feature1":  "Simulacion y visualizacion de campos vectoriales",
+                                "project4Feature2":  "Modelado interactivo de movimiento y fuerzas",
+                                "project4Feature3":  "Repositorio de codigo abierto en GitHub",
+                                "project4Btn1":  "GitHub ↗"
+                            },
+               "research-papers":  {
+                                "pageTitle":  "Articulos de Investigacion",
+                                "pageSub":  "PDFs y notas que documentan las ideas detras de nuestros proyectos.",
+                                "paper1Title":  "Analisis de Campo Vectorial",
+                                "paper1Summary":  "Un articulo vinculado a VectorSIM que documenta el modelo de campo vectorial, el flujo de simulacion y los metodos de analisis usados en el proyecto.",
+                                "paper1Feature1":  "Formulacion de campo vectorial",
+                                "paper1Feature2":  "Notas de simulacion y analisis",
+                                "paper1Feature3":  "PDF descargable",
+                                "paper1Btn1":  "Abrir PDF"
                             },
                "members":  {
                                "headerPill":  "Las Personas",
@@ -225,6 +242,7 @@
                "common":  {
                               "navMission":  "Миссия",
                               "navProjects":  "Проекты",
+                              "navResearchPapers":  "Исследования",
                               "navRobotics":  "Робототехника",
                               "navResources":  "Ресурсы",
                               "navTeam":  "Команда",
@@ -302,7 +320,23 @@
                                 "project3Feature1":  "Алгоритм Team Fit Score",
                                 "project3Feature2":  "Прогноз и симуляция матчей",
                                 "project3Feature3":  "Простой интерфейс",
-                                "project3Btn1":  "Полные детали"
+                                "project3Btn1":  "Полные детали",
+                                "project4Title":  "VectorSIM",
+                                "project4Summary":  "Проект моделирования на основе векторов для изучения движения полей, визуализации сил и интерактивной динамики.",
+                                "project4Feature1":  "Симуляция и визуализация векторных полей",
+                                "project4Feature2":  "Интерактивное моделирование движения и сил",
+                                "project4Feature3":  "Открытый репозиторий на GitHub",
+                                "project4Btn1":  "GitHub ↗"
+                            },
+               "research-papers":  {
+                                "pageTitle":  "Исследовательские статьи",
+                                "pageSub":  "PDF и заметки, документирующие идеи, лежащие в основе наших проектов.",
+                                "paper1Title":  "Анализ векторного поля",
+                                "paper1Summary":  "Статья, связанная с VectorSIM, которая описывает модель векторного поля, рабочий процесс симуляции и методы анализа, использованные в проекте.",
+                                "paper1Feature1":  "Формулировка векторного поля",
+                                "paper1Feature2":  "Заметки по симуляции и анализу",
+                                "paper1Feature3":  "PDF для загрузки",
+                                "paper1Btn1":  "Открыть PDF"
                             },
                "members":  {
                                "headerPill":  "Люди",
@@ -447,6 +481,7 @@
                   "common":  {
                                  "navMission":  "使命",
                                  "navProjects":  "项目",
+                                     "navResearchPapers":  "研究论文",
                                  "navRobotics":  "机器人",
                                  "navResources":  "资源",
                                  "navTeam":  "团队",
@@ -524,7 +559,23 @@
                                    "project3Feature1":  "Team Fit Score 算法",
                                    "project3Feature2":  "比赛预测与仿真",
                                    "project3Feature3":  "易于使用的界面",
-                                   "project3Btn1":  "完整详情"
+                                   "project3Btn1":  "完整详情",
+                                   "project4Title":  "VectorSIM",
+                                   "project4Summary":  "一个基于向量的模拟项目，用于探索场运动、力可视化和交互式动态。",
+                                   "project4Feature1":  "向量场模拟与可视化",
+                                   "project4Feature2":  "交互式运动与力建模",
+                                   "project4Feature3":  "GitHub 开源仓库",
+                                   "project4Btn1":  "GitHub ↗"
+                               },
+                  "research-papers":  {
+                                   "pageTitle":  "研究论文",
+                                   "pageSub":  "记录我们项目背后想法的 PDF 和说明文档。",
+                                   "paper1Title":  "向量场分析",
+                                   "paper1Summary":  "一篇与 VectorSIM 相关的论文，记录了项目中使用的向量场模型、模拟流程和分析方法。",
+                                   "paper1Feature1":  "向量场公式化",
+                                   "paper1Feature2":  "模拟与分析说明",
+                                   "paper1Feature3":  "可下载的 PDF",
+                                   "paper1Btn1":  "打开 PDF"
                                },
                   "members":  {
                                   "headerPill":  "团队成员",
@@ -669,6 +720,7 @@
                "common":  {
                               "navMission":  "Mission",
                               "navProjects":  "Projets",
+                              "navResearchPapers":  "Articles de recherche",
                               "navRobotics":  "Robotique",
                               "navResources":  "Ressources",
                               "navTeam":  "Equipe",
@@ -746,7 +798,23 @@
                                 "project3Feature1":  "Algorithme Team Fit Score",
                                 "project3Feature2":  "Prediction et simulation de matchs",
                                 "project3Feature3":  "Interface facile a utiliser",
-                                "project3Btn1":  "Details complets"
+                                "project3Btn1":  "Details Complets",
+                                "project4Title":  "VectorSIM",
+                                "project4Summary":  "Un projet de simulation base sur les vecteurs pour explorer le mouvement des champs, la visualisation des forces et la dynamique interactive.",
+                                "project4Feature1":  "Simulation et visualisation de champs vectoriels",
+                                "project4Feature2":  "Modelisation interactive du mouvement et des forces",
+                                "project4Feature3":  "Depot open source sur GitHub",
+                                "project4Btn1":  "GitHub ↗"
+                            },
+               "research-papers":  {
+                                "pageTitle":  "Articles de recherche",
+                                "pageSub":  "Des PDF et des notes qui documentent les idees derriere nos projets.",
+                                "paper1Title":  "Analyse de champ vectoriel",
+                                "paper1Summary":  "Un article lie a VectorSIM qui documente le modele de champ vectoriel, le flux de simulation et les methodes d'analyse utilisees dans le projet.",
+                                "paper1Feature1":  "Formulation du champ vectoriel",
+                                "paper1Feature2":  "Notes de simulation et d'analyse",
+                                "paper1Feature3":  "PDF telechargeable",
+                                "paper1Btn1":  "Ouvrir le PDF"
                             },
                "members":  {
                                "headerPill":  "Les personnes",
