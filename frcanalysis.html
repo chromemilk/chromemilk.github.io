@@ -4,97 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="6032 Auto-Scout — a Python FRC strategy engine with predictive rankings, Fit Scores, and Monte Carlo match simulations." />
   <title>6032 Auto-Scout – Hicswa Community Science</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
-
-  <style>
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
-      /* 16:9 Aspect Ratio */
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .carousel-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
-      object-fit: cover;
-      /* Ensures images fill the box nicely */
-    }
-
-    .carousel-slide.active {
-      opacity: 1;
-    }
-
-    /* Navigation Arrows */
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 1rem;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s;
-    }
-
-    .carousel-btn:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .prev {
-      left: 20px;
-    }
-
-    .next {
-      right: 20px;
-    }
-
-    /* Dots at bottom */
-    .carousel-indicators {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      background-color: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .dot.active {
-      background-color: white;
-    }
-  </style>
 </head>
 
 <body>
+  <div class="bg-orb"></div>
+
   <nav class="navbar">
     <div class="container nav-content">
       <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
@@ -133,28 +52,23 @@
         and Statbotics to generate predictive rankings, compatibility "Fit
         Scores", and Monte Carlo match simulations.
       </p>
-      <div class="btn-row" style="justify-content: center">
-        <a class="btn-primary" href="https://github.com/frcteam6032/Match-Analysis" target="_blank">GitHub Repository
-          ↗</a>
+      <div class="btn-row button-group-center">
+        <a class="btn-primary" href="https://github.com/frcteam6032/Match-Analysis" target="_blank">GitHub Repository ↗</a>
         <a class="btn-secondary" href="#features">View Features</a>
       </div>
     </div>
   </header>
 
-  <div class="section fade-in-section" id="demo" style="padding-top: 0">
+  <div class="section section-pt-0 fade-in-section" id="demo">
     <div class="container">
-      <div class="glass" style="padding: 1rem">
+      <div class="glass media-glass">
         <div class="carousel-container" id="carousel">
           <img src="image.png" class="carousel-slide active" alt="Auto-Scout Interface Main" />
           <img src="image2.png" class="carousel-slide" alt="Mind Map Visualization" />
           <img src="image3.png" class="carousel-slide" alt="Strategy Graph" />
 
-          <button class="carousel-btn prev" onclick="moveSlide(-1)">
-            &#10094;
-          </button>
-          <button class="carousel-btn next" onclick="moveSlide(1)">
-            &#10095;
-          </button>
+          <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
 
           <div class="carousel-indicators">
             <span class="dot active" onclick="setSlide(0)"></span>
@@ -168,12 +82,12 @@
 
   <div class="section fade-in-section" id="features">
     <div class="container">
-      <h2 style="margin-bottom: 2rem">Core Capabilities</h2>
+      <h2 class="section-heading">Core Capabilities</h2>
       <div class="grid-2">
         <div>
           <ul class="feature-list">
             <li>
-              <strong>TBA & Statbotics Integration:</strong> Automatically
+              <strong>TBA &amp; Statbotics Integration:</strong> Automatically
               fetches event data, match breakdowns, and EPA metrics.
             </li>
             <li>
@@ -227,12 +141,12 @@
           </div>
           <ul class="feature-list">
             <li>
-              <strong>NumPy/SciPy:</strong> Statistical modeling & Z-scores
+              <strong>NumPy/SciPy:</strong> Statistical modeling &amp; Z-scores
             </li>
             <li><strong>Matplotlib:</strong> Embedded data visualization</li>
             <li><strong>Requests:</strong> REST API handling</li>
           </ul>
-          <p style="margin-top: 1rem; font-size: 0.9rem">
+          <p>
             Data provided by The Blue Alliance and Statbotics.
           </p>
         </div>
@@ -265,11 +179,9 @@
       if (n >= slides.length) slideIndex = 0;
       if (n < 0) slideIndex = slides.length - 1;
 
-      // Reset all
       slides.forEach((slide) => slide.classList.remove("active"));
       dots.forEach((dot) => dot.classList.remove("active"));
 
-      // Activate current
       slides[slideIndex].classList.add("active");
       dots[slideIndex].classList.add("active");
     }
@@ -291,7 +203,6 @@
       autoPlayTimer = setInterval(() => moveSlide(1), 5000);
     }
 
-    // Initialize
     autoPlayTimer = setInterval(() => moveSlide(1), 5000);
   </script>
 </body>

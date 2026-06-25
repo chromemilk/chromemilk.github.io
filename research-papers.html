@@ -2,87 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Research Papers – Hicswa Community Science</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Research papers and writeups from Hicswa Community Science, documenting the ideas behind our open-source STEM projects." />
+  <title>Research Papers – Hicswa Community Science</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
-            <div class="nav-links" id="nav-links">
-                <a href="index.html">Mission</a>
-                <a href="projects.html">Projects</a>
-                <a href="research-papers.html" class="active">Research Papers</a>
-                <a href="robotics.html">Robotics</a>
-                <a href="index.html#resources">Resources</a>
-                <a href="members.html">Team</a>
-            </div>
-            <div class="language-switcher">
-                <label for="language-select" class="sr-only">Translate page</label>
-                <select id="language-select" aria-label="Translate page">
-                    <option value="en">English</option>
-                    <option value="es">Spanish</option>
-                    <option value="ru">Russian</option>
-                    <option value="zh-CN">Chinese</option>
-                    <option value="fr">French</option>
-                </select>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+  <div class="bg-orb"></div>
 
-    <div class="section fade-in-section" style="padding-bottom: 2rem">
-        <div class="container">
-            <h1>Research Papers</h1>
-            <p class="hero-sub" style="margin: 0">
-                PDFs and writeups that document the ideas behind our projects.
-            </p>
-        </div>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Mission</a>
+        <a href="projects.html">Projects</a>
+        <a href="research-papers.html" class="active">Research Papers</a>
+        <a href="robotics.html">Robotics</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="members.html">Team</a>
+      </div>
+      <div class="language-switcher">
+        <label for="language-select" class="sr-only">Translate page</label>
+        <select id="language-select" aria-label="Translate page">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="ru">Russian</option>
+          <option value="zh-CN">Chinese</option>
+          <option value="fr">French</option>
+        </select>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </nav>
 
-    <div class="section fade-in-section" style="padding-top: 0">
-        <div class="container">
-            <div class="grid-2">
-                <article class="project-card">
-                    <div class="badges">
-                        <span class="badge">PDF</span>
-                        <span class="badge">VectorSIM</span>
-                        <span class="badge">Research</span>
-                    </div>
-                    <h3>Vector Field Analysis</h3>
-                    <p class="project-summary">
-                        A research paper tied to VectorSIM that documents the vector
-                        field model, simulation workflow, and analysis methods used in
-                        the project.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Vector field formulation</li>
-                        <li>Simulation and analysis notes</li>
-                        <li>Downloadable PDF</li>
-                    </ul>
-                    <div class="btn-row">
-                        <a class="btn-primary" href="Vector_Field_Analysis.pdf" target="_blank">Open PDF</a>
-                    </div>
-                </article>
-            </div>
-        </div>
+  <div class="section section-pb-sm fade-in-section">
+    <div class="container">
+      <h1>Research Papers</h1>
+      <p class="hero-sub">
+        PDFs and writeups that document the ideas behind our projects.
+      </p>
     </div>
+  </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Hicswa Community Science.</p>
-        </div>
-    </footer>
+  <div class="section section-pt-0 fade-in-section">
+    <div class="container">
+      <div class="grid-2">
+        <article class="project-card">
+          <div class="badges">
+            <span class="badge">PDF</span>
+            <span class="badge">VectorSIM</span>
+            <span class="badge">Research</span>
+          </div>
+          <h3>Vector Field Analysis</h3>
+          <p class="project-summary">
+            A research paper tied to VectorSIM that documents the vector
+            field model, simulation workflow, and analysis methods used in
+            the project.
+          </p>
+          <ul class="feature-list">
+            <li>Vector field formulation</li>
+            <li>Simulation and analysis notes</li>
+            <li>Downloadable PDF</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn-primary" href="Vector_Field_Analysis.pdf" target="_blank">Open PDF</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Hicswa Community Science.</p>
+    </div>
+  </footer>
 </body>
 
 </html>

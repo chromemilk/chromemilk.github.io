@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PhotonPeek — a DIY scanning microscope you can build for under $100 with Arduino, a laser diode, and Python-based image processing." />
   <title>PhotonPeek – Hicswa Community Science</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -11,6 +12,8 @@
 </head>
 
 <body>
+  <div class="bg-orb"></div>
+
   <nav class="navbar">
     <div class="container nav-content">
       <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
@@ -51,7 +54,7 @@
         to a Python app that reconstructs 2D and 3D images, with optional
         FFT sharpening, deconvolution, and neural upscaling.
       </p>
-      <div class="btn-row" style="justify-content: center">
+      <div class="btn-row button-group-center">
         <a class="btn-primary" href="https://github.com/chromemilk/PhotonPeek-scanning-microscope"
           target="_blank">GitHub Repository ↗</a>
         <a class="btn-secondary" href="#details">View Details</a>
@@ -59,7 +62,7 @@
     </div>
   </header>
 
-  <div class="section fade-in-section" id="details" style="padding-top: 0">
+  <div class="section section-pt-0 fade-in-section" id="details">
     <div class="container">
       <div class="card" style="margin-bottom: 2rem">
         <h3>Overview</h3>
@@ -125,7 +128,7 @@
         See <code>hardware/</code> in the repo for STL files and wiring
         diagrams.
       </p>
-      <div class="parts-grid" style="margin-top: 1.5rem">
+      <div class="parts-grid">
         <div class="part">
           <h4>Laser Diode 650nm</h4>
           <p>5mW. Stable red illumination; safe, inexpensive.</p>
@@ -140,7 +143,7 @@
         </div>
         <div class="part">
           <h4>Arduino Mega 2560</h4>
-          <p>Multiple analog inputs & flash space.</p>
+          <p>Multiple analog inputs &amp; flash space.</p>
         </div>
         <div class="part">
           <h4>Stepper Motors</h4>
@@ -206,21 +209,21 @@
         <div>
           <h3>Serial Data Protocol</h3>
           <p>
-            The acquisition layer is line-oriented ASCII for clarity &
+            The acquisition layer is line-oriented ASCII for clarity &amp;
             debugging:
           </p>
           <pre>
 CONFIG,&lt;mode&gt;,&lt;precision&gt;,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;spp&gt;
 HEADER,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;spp&gt;
 DATA,&lt;x&gt;,&lt;y&gt;,&lt;z&gt;,&lt;value&gt;</pre>
-          <p style="margin-top: 1rem; font-size: 0.9rem">
+          <p>
             <strong>CONFIG</strong> sets the session.
             <strong>HEADER</strong> echoes geometry for host validation. Each
             <strong>DATA</strong> line is streamed as soon as the analog read
-            settles, enabling overlapping compute & I/O.
+            settles, enabling overlapping compute &amp; I/O.
           </p>
 
-          <h3 style="margin-top: 3rem">Roadmap</h3>
+          <h3>Roadmap</h3>
           <ul class="feature-list">
             <li>
               <strong>v1.0:</strong> Core acquisition + basic processing.

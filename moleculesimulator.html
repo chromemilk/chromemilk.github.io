@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Molecule Simulator – Hicswa Community Science</title>
+  <meta name="description" content="PlanckSim — an interactive 3D molecule simulator built with C++ and OpenGL featuring VSEPR geometry, force-based physics, and 118 elements." />
+  <title>PlanckSim – Hicswa Community Science</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
 
 <body>
+  <div class="bg-orb"></div>
+
   <nav class="navbar">
     <div class="container nav-content">
       <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
@@ -49,18 +52,17 @@
         with chemical structures, visualize VSEPR geometry, and simulate
         atomic forces.
       </p>
-      <div class="btn-row" style="justify-content: center">
-        <a class="btn-primary" href="https://github.com/chromemilk/Molecule-Simulator" target="_blank">GitHub Repository
-          ↗</a>
+      <div class="btn-row button-group-center">
+        <a class="btn-primary" href="https://github.com/chromemilk/Molecule-Simulator" target="_blank">GitHub Repository ↗</a>
         <a class="btn-secondary" href="#demo">Watch Demo</a>
       </div>
     </div>
   </header>
 
-  <div class="section fade-in-section" id="demo" style="padding-top: 0">
+  <div class="section section-pt-0 fade-in-section" id="demo">
     <div class="container">
-      <div class="glass" style="padding: 1rem">
-        <video controls autoplay loop muted playsinline style="width: 100%; border-radius: 8px; display: block">
+      <div class="glass media-glass">
+        <video controls autoplay loop muted playsinline>
           <source src="https://github.com/user-attachments/assets/4c46024b-c0af-442c-bb21-6fc3e0394bcf"
             type="video/mp4" />
           Your browser does not support the video tag.
@@ -71,7 +73,7 @@
 
   <div class="section fade-in-section">
     <div class="container">
-      <h2 style="margin-bottom: 2rem">Full Feature Set</h2>
+      <h2 class="section-heading">Full Feature Set</h2>
       <div class="grid-2">
         <div>
           <ul class="feature-list">
@@ -159,7 +161,7 @@
             <li><strong>GLAD:</strong> OpenGL function loader</li>
             <li><strong>GLM:</strong> Mathematics (vectors/matrices)</li>
           </ul>
-          <p style="margin-top: 1rem; font-size: 0.9rem">
+          <p>
             Acknowledgements to LearnOpenGL and TheCherno for their excellent
             C++ graphics tutorials.
           </p>
