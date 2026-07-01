@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Rachel Vision — AI-enabled smart glasses built with ESP-32 for real-time object recognition, voice control, and hands-free AI assistance." />
+    <title>Rachel Vision – Hicswa Community Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div class="bg-orb"></div>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Mission</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="research-papers.html">Research Papers</a>
+                <a href="robotics.html">Robotics</a>
+                <a href="index.html#resources">Resources</a>
+                <a href="members.html">Team</a>
+            </div>
+            <div class="language-switcher">
+                <label for="language-select" class="sr-only">Translate page</label>
+                <select id="language-select" aria-label="Translate page">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="ru">Russian</option>
+                    <option value="zh-CN">Chinese</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero fade-in-section">
+        <div class="container">
+            <h1>Visionless Spatial Awareness System</h1>
+            <p class="hero-sub">
+                Take any regular pair of glasses and upgrade them with an ESP-32 dev module and a LiDAR sensor for real
+                time spatial awareness. Use cases in this expand to people with vision impairments, such as Blindness,
+                and Macular degeneration.
+            </p>
+            <div class="btn-row button-group-center">
+                <a class="btn-primary" href="https://github.com/chromemilk/spatial-awareness" target="_blank">GitHub
+                    Repository
+                    ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="section section-pt-0 fade-in-section" id="demo">
+        <div class="container"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+            <div class="glass media-glass" style="display: flex; justify-content: center;">
+                <video class="responsive-video" autoplay loop muted playsinline
+                    style="width: 100%; max-height: 600px; object-fit: cover; border-radius: 8px;">
+                    <source src="SpatialVideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="glass media-glass" style="display: flex; justify-content: center;">
+                <img src="IMG_1531.jpg" alt="Demo Image"
+                    style="width: 100%; max-height: 350px; object-fit: cover; border-radius: 8px;">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section fade-in-section">
+        <div class="container">
+            <h2 class="section-heading">Full Feature Set &amp; Required Materials</h2>
+            <div class="grid-2">
+                <div>
+                    <ul class="feature-list">
+                        <li>
+                            <strong>LiDAR:</strong> A ToF LiDAR sensor maps out the user's surroundings.
+                        <li>
+                            <strong>Spatial Awareness:</strong> A statistical model detects many forms of obstacles,
+                            both
+                            static and moving.
+                        </li>
+                        <li>
+                            <strong>Wireless:</strong> All components are independent of each other and are connected
+                            via a central network.
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="feature-list">
+                        <li><strong>VL53L1X:</strong> $15 - $25</li>
+                        <li><strong>Microcontroller:</strong> ESP-32 S3 $10 - $20</li>
+                        <li><strong>Power Source:</strong> Small LiPo battery or battery pack, $10 - $20</li>
+                        <li><strong>Glasses:</strong> Cheap blue light or plastic glasses, $5 - $15</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section fade-in-section bg-offset">
+        <div class="container">
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Buy List</h3>
+                    <ol class="buy-list">
+                        <li><a href="https://www.amazon.com/Hosyond-Development-Dual-Mode-Compatible-ESP32-S3-WROOM-1/dp/B0F5QCK6X5/ref=sr_1_3?sr=8-3"
+                                target="_blank">ESP-32 S3 Module</a></li>
+                        <li><a href="https://www.amazon.com/TOF400C-VL53L1X-Ranging-Flight-Distance/dp/B0DC6M6G7W?th=1"
+                                target="_blank">VL53L1X</a></li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3>Getting Started</h3>
+                    <p>Clone the repository to build locally.</p>
+                    <pre><code>git clone https://github.com/chromemilk/spatial-awareness</code></pre>
+                    <div class="btn-row">
+                        <a href="https://github.com/chromemilk/spatial-awareness" class="btn-outline">View License
+                            (MIT)</a>
+                    </div>
+
+                    <h3>Build &amp; Programming Instructions</h3>
+                    <p class="instruction-prereq">Pre-build: download PlatformIO and add the ESP-32 core</p>
+                    <ol class="instruction-list">
+                        <li>Obtain required materials (listed above)</li>
+                        <li>Wire time of flight sensor to ESP32 dev module according to firmware</li>
+                        <li>Flash ESP-32 dev module with the provided firmware and set network parameters</li>
+                        <li>Attach hardware to glasses via tape or 3D-printed parts</li>
+                    </ol>
+
+                    <h3>Usage Instructions</h3>
+                    <ol class="instruction-list">
+                        <li>Have a local network set up for all the devices to connect to</li>
+                        <li>Power on the device</li>
+                        <li>Run the provided Python script on your computer</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Hicswa Community Science.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
