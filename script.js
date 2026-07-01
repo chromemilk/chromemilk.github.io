@@ -455,19 +455,217 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // Initialize
+    // Toast Notification System
+    const showToast = (message) => {
+      let toast = document.getElementById("lang-toast");
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "lang-toast";
+        toast.className = "toast-notification";
+        toast.innerHTML = `
+          <div class="toast-content" id="toast-text"></div>
+          <button class="toast-close" id="toast-close-btn" aria-label="Close">&times;</button>
+        `;
+        document.body.appendChild(toast);
+        
+        toast.querySelector("#toast-close-btn").addEventListener("click", () => {
+          toast.classList.remove("show");
+        });
+      }
+      
+      toast.querySelector("#toast-text").textContent = message;
+      // Trigger reflow/animation
+      setTimeout(() => {
+        toast.classList.add("show");
+      }, 50);
+      
+      // Auto-hide after 5 seconds
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 5000);
+    };
+
+    const getToastMessage = (lang) => {
+      if (lang === "en") {
+        return "System language detected as English. Page language has been set.";
+      }
+      if (translationData && translationData[lang] && translationData[lang].common && translationData[lang].common.langDetected) {
+        return translationData[lang].common.langDetected;
+      }
+      const fallbacks = {
+        es: "Idioma del sistema detectado como español. Hemos traducido la página automáticamente.",
+        ru: "Системный язык определен как русский. Сайт автоматически переведен.",
+        "zh-CN": "检测到系统语言为中文，已为您自动切换语言。",
+        fr: "Langue système détectée : français. La page a été traduite automatiquement."
+      };
+      return fallbacks[lang] || "Language changed.";
+    };
+
+    // Initialize Translations & Probing
     saveOriginalText();
-    const savedLang = localStorage.getItem(storageKey) || "en";
-    languageSelect.value = savedLang;
+    
+    const initTranslation = async () => {
+      const savedLang = localStorage.getItem(storageKey);
+      const alreadyDetected = localStorage.getItem("hicswa-language-detected");
 
-    if (savedLang !== "en") {
-      applyLanguage(savedLang);
-    }
+      if (!savedLang && !alreadyDetected) {
+        const sysLang = navigator.language || navigator.userLanguage || "";
+        let matchedLang = null;
 
-    languageSelect.addEventListener("change", (e) => {
+        if (sysLang.startsWith("es")) matchedLang = "es";
+        else if (sysLang.startsWith("ru")) matchedLang = "ru";
+        else if (sysLang.startsWith("zh")) matchedLang = "zh-CN";
+        else if (sysLang.startsWith("fr")) matchedLang = "fr";
+        else if (sysLang.startsWith("en")) matchedLang = "en";
+
+        if (matchedLang) {
+          localStorage.setItem(storageKey, matchedLang);
+          localStorage.setItem("hicswa-language-detected", "true");
+          languageSelect.value = matchedLang;
+          await applyLanguage(matchedLang);
+          showToast(getToastMessage(matchedLang));
+        } else {
+          // If no match, default to English but mark detected
+          localStorage.setItem(storageKey, "en");
+          localStorage.setItem("hicswa-language-detected", "true");
+          languageSelect.value = "en";
+        }
+      } else {
+        const currentLang = savedLang || "en";
+        languageSelect.value = currentLang;
+        if (currentLang !== "en") {
+          await applyLanguage(currentLang);
+        }
+      }
+    };
+
+    initTranslation();
+
+    languageSelect.addEventListener("change", async (e) => {
       const lang = e.target.value;
       localStorage.setItem(storageKey, lang);
-      applyLanguage(lang);
+      localStorage.setItem("hicswa-language-detected", "true");
+      await applyLanguage(lang);
     });
+  }
+
+  // US Location Restriction (members.html only)
+  const isMembersPage = window.location.pathname.endsWith("members.html") || window.location.pathname.split("/").pop() === "members.html";
+  if (isMembersPage) {
+    const runRestrictionCheck = async () => {
+      // 1. Instantly create and show loading overlay
+      const overlay = document.createElement("div");
+      overlay.className = "restriction-overlay";
+      overlay.innerHTML = `
+        <div class="restriction-card" id="restriction-card">
+          <div class="restriction-spinner" id="restriction-spinner"></div>
+          <h2 id="restriction-title">Verifying access...</h2>
+          <p id="restriction-text">Checking regional authorization permissions.</p>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      document.body.classList.add("restricted-active");
+
+      // Dynamically localize verification screen
+      const currentLang = localStorage.getItem("hicswa-language") || "en";
+      if (currentLang === "es") {
+        document.getElementById("restriction-title").textContent = "Verificando acceso...";
+        document.getElementById("restriction-text").textContent = "Comprobando permisos de autorización regional.";
+      } else if (currentLang === "ru") {
+        document.getElementById("restriction-title").textContent = "Проверка доступа...";
+        document.getElementById("restriction-text").textContent = "Проверка разрешений регионального доступа.";
+      } else if (currentLang === "zh-CN") {
+        document.getElementById("restriction-title").textContent = "正在验证访问权限...";
+        document.getElementById("restriction-text").textContent = "正在检查区域授权许可。";
+      } else if (currentLang === "fr") {
+        document.getElementById("restriction-title").textContent = "Vérification de l'accès...";
+        document.getElementById("restriction-text").textContent = "Vérification des autorisations régionales.";
+      }
+
+      // 2. Query geolocation APIs sequentially
+      const checkLocation = async () => {
+        // Try ipapi.co
+        try {
+          const res = await fetch("https://ipapi.co/json/");
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.country_code) return data.country_code === "US";
+          }
+        } catch (e) {
+          console.warn("ipapi.co failed, trying ipwho.is...", e);
+        }
+
+        // Try ipwho.is
+        try {
+          const res = await fetch("https://ipwho.is/");
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.country_code) return data.country_code === "US";
+          }
+        } catch (e) {
+          console.warn("ipwho.is failed, trying geolocation-db...", e);
+        }
+
+        // Try geolocation-db
+        try {
+          const res = await fetch("https://geolocation-db.com/json/");
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.country_code) {
+              return data.country_code === "US" || data.country_code === "USA";
+            }
+          }
+        } catch (e) {
+          console.error("All geolocation check APIs failed", e);
+        }
+
+        // Default: allow access in case of complete API failure
+        return true;
+      };
+
+      const inUS = await checkLocation();
+
+      if (inUS) {
+        overlay.remove();
+        document.body.classList.remove("restricted-active");
+      } else {
+        // Access Denied: update screen layout & text
+        const spinner = document.getElementById("restriction-spinner");
+        if (spinner) spinner.remove();
+
+        const card = document.getElementById("restriction-card");
+        const icon = document.createElement("div");
+        icon.className = "restriction-icon";
+        icon.innerHTML = `
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock" style="color: var(--text-secondary);">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        `;
+        card.insertBefore(icon, card.firstChild);
+
+        let restrictionTitle = "Access Restricted";
+        let restrictionMessage = "We're sorry, but access to this page is restricted by the website admin.";
+
+        if (currentLang === "es") {
+          restrictionTitle = "Acceso Restringido";
+          restrictionMessage = "Lo sentimos, pero el acceso a esta página está restringido por el administrador del sitio web.";
+        } else if (currentLang === "ru") {
+          restrictionTitle = "Доступ ограничен";
+          restrictionMessage = "К сожалению, доступ к этой странице ограничен администратором сайта.";
+        } else if (currentLang === "zh-CN") {
+          restrictionTitle = "访问受限";
+          restrictionMessage = "抱歉，网站管理员已限制对此页面的访问。";
+        } else if (currentLang === "fr") {
+          restrictionTitle = "Accès Restreint";
+          restrictionMessage = "Nous sommes désolés, mais l'accès à cette page est restreint par l'administrateur du site.";
+        }
+
+        document.getElementById("restriction-title").textContent = restrictionTitle;
+        document.getElementById("restriction-text").textContent = restrictionMessage;
+      }
+    };
+
+    runRestrictionCheck();
   }
 });

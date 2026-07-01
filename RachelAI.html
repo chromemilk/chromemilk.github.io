@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rachel Vision — AI-enabled smart glasses built with ESP-32 for real-time object recognition, voice control, and hands-free AI assistance." />
+  <meta name="description"
+    content="Rachel Vision — AI-enabled smart glasses built with ESP-32 for real-time object recognition, voice control, and hands-free AI assistance." />
   <title>Rachel Vision – Hicswa Community Science</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -54,7 +55,8 @@
         recognition, scene description, and voice interaction.
       </p>
       <div class="btn-row button-group-center">
-        <a class="btn-primary" href="https://github.com/chromemilk/Rachel-Vision" target="_blank">GitHub Repository ↗</a>
+        <a class="btn-primary" href="https://github.com/chromemilk/Rachel-Vision" target="_blank">GitHub Repository
+          ↗</a>
         <a class="btn-secondary" href="#demo">Watch Demo</a>
       </div>
     </div>
@@ -62,12 +64,6 @@
 
   <div class="section section-pt-0 fade-in-section" id="demo">
     <div class="container">
-      <div class="glass media-glass">
-        <video controls autoplay loop muted playsinline>
-          <source src="RachelMovie.MOV" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
       <div class="glass media-glass">
         <img src="RachelPicture.jpg" alt="Rachel Vision AI glasses prototype" />
       </div>
@@ -118,10 +114,15 @@
         <div class="card">
           <h3>Buy List</h3>
           <ol class="buy-list">
-            <li><a href="https://www.amazon.com/AiTrip-ESP32-CAM-Bluetooth-Module-Development/dp/B081MT8973" target="_blank">ESP-32 CAM Module</a></li>
-            <li><a href="https://www.amazon.com/Advanced-Omnidirectional-Microphone-Conference-Auditory/dp/B0GMJ1KVT1" target="_blank">Advanced Omnidirectional Microphone</a></li>
-            <li><a href="https://www.amazon.com/HiLetgo-CP2102-Converter-Adapter-Downloader/dp/B00LODGRV8" target="_blank">ESP-32 CAM → Micro USB Adapter</a></li>
-            <li><a href="https://www.amazon.com/Hosyond-Development-Dual-Mode-Compatible-ESP32-S3-WROOM-1/dp/B0F5QCK6X5/ref=sr_1_3?sr=8-3" target="_blank">ESP-32 S3 Module</a></li>
+            <li><a href="https://www.amazon.com/AiTrip-ESP32-CAM-Bluetooth-Module-Development/dp/B081MT8973"
+                target="_blank">ESP-32 CAM Module</a></li>
+            <li><a href="https://www.amazon.com/Advanced-Omnidirectional-Microphone-Conference-Auditory/dp/B0GMJ1KVT1"
+                target="_blank">Advanced Omnidirectional Microphone</a></li>
+            <li><a href="https://www.amazon.com/HiLetgo-CP2102-Converter-Adapter-Downloader/dp/B00LODGRV8"
+                target="_blank">ESP-32 CAM → Micro USB Adapter</a></li>
+            <li><a
+                href="https://www.amazon.com/Hosyond-Development-Dual-Mode-Compatible-ESP32-S3-WROOM-1/dp/B0F5QCK6X5/ref=sr_1_3?sr=8-3"
+                target="_blank">ESP-32 S3 Module</a></li>
           </ol>
         </div>
 
@@ -137,7 +138,8 @@
           <p class="instruction-prereq">Pre-build: download Arduino IDE and related packages</p>
           <ol class="instruction-list">
             <li>Obtain required materials (listed above)</li>
-            <li>Wire microphone to the ESP-32 S3 Module according to the firmware code (remember L/R should be tied to GND)</li>
+            <li>Wire microphone to the ESP-32 S3 Module according to the firmware code (remember L/R should be tied to
+              GND)</li>
             <li>Wire ESP-32 CAM to the adapter according to the firmware code</li>
             <li>Flash ESP-32 S3 Module with the provided "mic" firmware</li>
             <li>Flash ESP-32 CAM Module with the provided "cam" firmware</li>
@@ -145,12 +147,14 @@
           </ol>
 
           <h3>Usage Instructions</h3>
-          <p class="instruction-prereq">Pre-use: Obtain relevant API keys (look in Python script) and place them in a .env file in the local directory</p>
+          <p class="instruction-prereq">Pre-use: Obtain relevant API keys (look in Python script) and place them in a
+            .env file in the local directory</p>
           <ol class="instruction-list">
             <li>Have a local network set up for all the devices to connect to</li>
             <li>Power on the Rachel Vision device</li>
             <li>Run provided server Python script</li>
-            <li>Interact with the device using the camera and microphone (say "Rachel, what is this?" to trigger a response)</li>
+            <li>Interact with the device using the camera and microphone (say "Rachel, what is this?" to trigger a
+              response)</li>
           </ol>
         </div>
       </div>
