@@ -13,8 +13,6 @@
 </head>
 
 <body>
-  <div class="bg-orb"></div>
-
   <nav class="navbar">
     <div class="container nav-content">
       <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
@@ -23,24 +21,43 @@
         <a href="projects.html">Projects</a>
         <a href="research-papers.html">Research Papers</a>
         <a href="robotics.html">Robotics</a>
-        <a href="index.html#resources">Resources</a>
         <a href="members.html">Team</a>
       </div>
-      <div class="language-switcher">
-        <label for="language-select" class="sr-only">Translate page</label>
-        <select id="language-select" aria-label="Translate page">
-          <option value="en">English</option>
-          <option value="es">Spanish</option>
-          <option value="ru">Russian</option>
-          <option value="zh-CN">Chinese</option>
-          <option value="fr">French</option>
-        </select>
+      <div class="nav-actions">
+        <div class="language-switcher">
+          <label for="language-select" class="sr-only">Translate page</label>
+          <select id="language-select" aria-label="Translate page">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="ru">Russian</option>
+            <option value="zh-CN">Chinese</option>
+            <option value="fr">French</option>
+          </select>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </nav>
 
@@ -48,10 +65,11 @@
     <div class="container">
       <h1>Science, Shared and Simplified</h1>
       <p class="hero-sub">
-        We build simulators, software, and hardware for the science community. Everything is open source and documented
-        so you can replicate it yourself.
+        Quality research or educational tools are often locked behind high prices, so we aim to bring those prices down
+        or make it completely free. The website contains links to all projects, and all the setup, programming, firmware,
+        and hardware instructions.
       </p>
-      <div class="button-group button-group-center">
+      <div class="button-group">
         <a href="projects.html" class="btn btn-primary">View Projects</a>
         <a href="robotics.html" class="btn btn-secondary">Our Robotics Team</a>
       </div>
@@ -60,8 +78,8 @@
 
   <section id="mission" class="section fade-in-section">
     <div class="container">
-      <div class="grid-3">
-        <div class="card">
+      <div class="mission-banner">
+        <div class="card mission-col">
           <h3>Accessibility</h3>
           <p>
             Scientific equipment shouldn't cost thousands. We design DIY
@@ -69,14 +87,14 @@
             hardware and fit in a student's budget.
           </p>
         </div>
-        <div class="card">
+        <div class="card mission-col">
           <h3>Documentation</h3>
           <p>
             Every project includes parts lists, diagrams, and
             commented source code/instructions so you can replicate it yourself.
           </p>
         </div>
-        <div class="card">
+        <div class="card mission-col">
           <h3>Community</h3>
           <p>
             We're a small group of students that put everything online and donate to local robotics team.
@@ -89,68 +107,80 @@
   <section id="featured" class="section fade-in-section">
     <div class="container">
       <h2 class="section-heading">Featured Work</h2>
-      <div class="split-layout">
-        <div class="card">
-          <span class="pill">Hardware, Software, Firmware</span>
-          <h3>PhotonPeek Scanning Transmission Microscope</h3>
-          <p>
-            A sub-$100 scanning microscope. A 650nm laser rasters across a
-            sample, a photodiode reads the reflected intensity, and a Python
-            app reconstructs 2D and 3D images from the coordinates.
-          </p>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-val">&lt;10µm</span>
-              <span class="stat-label">Target Resolution</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-val">$100</span>
-              <span class="stat-label">EBC</span>
-            </div>
+      <div class="project-index-table">
+        <div class="card project-index-row">
+          <div class="project-info">
+            <span class="pill">Hardware, Software, Firmware</span>
+            <h3>PhotonPeek Scanning Transmission Microscope</h3>
+            <p>
+              A sub-$100 scanning microscope. A 650nm laser rasters across a
+              sample, a photodiode reads the reflected intensity, and a Python
+              app reconstructs 2D and 3D images from the coordinates.
+            </p>
           </div>
-          <a href="photonpeek.html" class="btn-outline">View Details &rarr;</a>
+          <div class="project-meta">
+            <div class="project-stats">
+              <div class="stat-item">
+                <span class="stat-val">&lt;10µm</span>
+                <span class="stat-label">Target Resolution</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">$100</span>
+                <span class="stat-label">EBC</span>
+              </div>
+            </div>
+            <a href="photonpeek.html" class="btn-outline">View Details &rarr;</a>
+          </div>
         </div>
 
-        <div class="card">
-          <span class="pill">Software</span>
-          <h3>PlanckSim</h3>
-          <p>
-            A 3D molecule builder written in C++ and OpenGL. Type a chemical
-            formula and it constructs the structure, calculates VSEPR
-            geometry, and lets you edit molecules in real time.
-          </p>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-val">118</span>
-              <span class="stat-label">Elements</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-val">C++</span>
-              <span class="stat-label">OpenGL</span>
-            </div>
+        <div class="card project-index-row">
+          <div class="project-info">
+            <span class="pill">Software</span>
+            <h3>PlanckSim</h3>
+            <p>
+              A 3D molecule builder written in C++ and OpenGL. Type a chemical
+              formula and it constructs the structure, calculates VSEPR
+              geometry, and lets you edit molecules in real time.
+            </p>
           </div>
-          <a href="moleculesimulator.html" class="btn-outline">View Details &rarr;</a>
+          <div class="project-meta">
+            <div class="project-stats">
+              <div class="stat-item">
+                <span class="stat-val">118</span>
+                <span class="stat-label">Elements</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">C++ / OpenGL</span>
+                <span class="stat-label">Stack</span>
+              </div>
+            </div>
+            <a href="moleculesimulator.html" class="btn-outline">View Details &rarr;</a>
+          </div>
         </div>
 
-        <div class="card">
-          <span class="pill">Hardware, Software, Firmware</span>
-          <h3>Visionless Walking Assistance</h3>
-          <p>
-            Using a VL53L1X laser rangefinder mounted to a pair of glasses, an ESP-32 microcontroller will stream 3D
-            spatial data over a secure network to be processed. The computer will distinguish between static objects,
-            moving objects, and their height; then call it out to the user.
-          </p>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-val">ESP-32</span>
-              <span class="stat-label">Microcontroller</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-val">LiDAR</span>
-              <span class="stat-label">Ranging Sensor</span>
-            </div>
+        <div class="card project-index-row">
+          <div class="project-info">
+            <span class="pill">Hardware, Software, Firmware</span>
+            <h3>Visionless Walking Assistance</h3>
+            <p>
+              Using a VL53L1X laser rangefinder mounted to a pair of glasses, an ESP-32 microcontroller will stream 3D
+              spatial data over a secure network to be processed. The computer will distinguish between static objects,
+              moving objects, and their height; then call it out to the user.
+            </p>
           </div>
-          <a href="visionless-walking-assistance.html" class="btn-outline">View Details &rarr;</a>
+          <div class="project-meta">
+            <div class="project-stats">
+              <div class="stat-item">
+                <span class="stat-val">ESP-32</span>
+                <span class="stat-label">Microcontroller</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">LiDAR</span>
+                <span class="stat-label">Ranging Sensor</span>
+              </div>
+            </div>
+            <a href="visionless-walking-assistance.html" class="btn-outline">View Details &rarr;</a>
+          </div>
         </div>
       </div>
     </div>
@@ -159,48 +189,60 @@
   <section id="upcoming" class="section fade-in-section">
     <div class="container">
       <h2 class="section-heading">Upcoming Work</h2>
-      <div class="split-layout">
-        <div class="card">
-          <span class="pill">Hardware, Software, Firmware</span>
-          <h3>AI Enabled Glasses</h3>
-          <p>
-            Take any regular pair of glasses and upgrade them with an ESP-32
-            camera, and a microphone for a voice
-            controlled AI experience.
-          </p>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-val">Camera Enabled</span>
-              <span class="stat-label">Identify objects, solve problems</span>
+      <div class="upcoming-index-grid">
+        <div class="card upcoming-col">
+          <div>
+            <span class="pill">Hardware, Software, Firmware</span>
+            <h3>AI Enabled Glasses</h3>
+            <p>
+              Take any regular pair of glasses and upgrade them with an ESP-32
+              camera, and a microphone for a voice
+              controlled AI experience.
+            </p>
+          </div>
+          <div class="upcoming-footer">
+            <div class="project-stats">
+              <div class="stat-item">
+                <span class="stat-val">Camera Enabled</span>
+                <span class="stat-label">Identify objects, solve problems</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">Audio Enabled</span>
+                <span class="stat-label">For a easy-to-use, hands-free experience</span>
+              </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-val">Audio Enabled</span>
-              <span class="stat-label">For a easy-to-use, hands-free experience</span>
+            <div>
+              <a href="RachelAI.html" class="btn-outline">View Details &rarr;</a>
             </div>
           </div>
-          <a href="RachelAI.html" class="btn-outline">View Details &rarr;</a>
         </div>
 
-        <div class="card">
-          <span class="pill">Software</span>
-          <h3>FRC Auto-Scout</h3>
-          <p>
-            A scouting tool for FRC teams. It pulls live event data from The
-            Blue Alliance and Statbotics, scores team compatibility for
-            alliance selection, and models match outcomes using Monte Carlo
-            simulation. (updated for 2026)
-          </p>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-val">Per-Event Analysis</span>
-              <span class="stat-label">For deep, live analysis</span>
+        <div class="card upcoming-col">
+          <div>
+            <span class="pill">Software</span>
+            <h3>FRC Auto-Scout</h3>
+            <p>
+              A scouting tool for FRC teams. It pulls live event data from The
+              Blue Alliance and Statbotics, scores team compatibility for
+              alliance selection, and models match outcomes using Monte Carlo
+              simulation. (updated for 2026)
+            </p>
+          </div>
+          <div class="upcoming-footer">
+            <div class="project-stats">
+              <div class="stat-item">
+                <span class="stat-val">Per-Event Analysis</span>
+                <span class="stat-label">For deep, live analysis</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">Python</span>
+                <span class="stat-label">Easy To use</span>
+              </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-val">Python</span>
-              <span class="stat-label">Easy To use</span>
+            <div>
+              <a href="frcanalysis.html" class="btn-outline">View Details &rarr;</a>
             </div>
           </div>
-          <a href="frcanalysis.html" class="btn-outline">View Details &rarr;</a>
         </div>
       </div>
     </div>

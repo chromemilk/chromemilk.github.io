@@ -1,4 +1,57 @@
+// Immediate Theme Initialization to avoid flash of unstyled theme
+(function () {
+  const savedTheme = localStorage.getItem("hicswa-theme");
+  if (savedTheme === "dark" || savedTheme === "light") {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
+  // Theme Management
+  const themeToggle = document.getElementById("theme-toggle");
+
+  const getSystemTheme = () => {
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  };
+
+  const applyTheme = (theme) => {
+    if (theme === "dark" || theme === "light") {
+      document.documentElement.setAttribute("data-theme", theme);
+      if (themeToggle) {
+        themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+        themeToggle.setAttribute("title", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+      }
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+      const current = getSystemTheme();
+      if (themeToggle) {
+        themeToggle.setAttribute("aria-label", `Switch to ${current === "dark" ? "light" : "dark"} mode`);
+        themeToggle.setAttribute("title", `Switch to ${current === "dark" ? "light" : "dark"} mode`);
+      }
+    }
+  };
+
+  if (themeToggle) {
+    const savedTheme = localStorage.getItem("hicswa-theme");
+    applyTheme(savedTheme || getSystemTheme());
+
+    themeToggle.addEventListener("click", () => {
+      const currentActiveTheme =
+        document.documentElement.getAttribute("data-theme") || getSystemTheme();
+      const newTheme = currentActiveTheme === "dark" ? "light" : "dark";
+      localStorage.setItem("hicswa-theme", newTheme);
+      applyTheme(newTheme);
+    });
+
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+        if (!localStorage.getItem("hicswa-theme")) {
+          applyTheme(e.matches ? "dark" : "light");
+        }
+      });
+    }
+  }
+
   // Hamburger Menu Logic
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
@@ -67,8 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           heroPill: "header.hero .pill",
           heroTitle: "header.hero h1",
@@ -84,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
           featuredHeading: "#featured h2",
           photonPeekPill: "#featured .card:nth-of-type(1) .pill",
           photonPeekTitle: "#featured .card:nth-of-type(1) h3",
-          photonPeekText: "#featured .card:nth-of-type(1) > p",
+          photonPeekText: "#featured .card:nth-of-type(1) p",
           photonPeekResolution: "#featured .card:nth-of-type(1) .stat-val",
           photonPeekResolutionLabel: "#featured .card:nth-of-type(1) .stat-label",
           photonPeekPrice: "#featured .card:nth-of-type(1) .stat-item:nth-of-type(2) .stat-val",
@@ -92,14 +144,14 @@ document.addEventListener("DOMContentLoaded", () => {
           photonPeekLink: "#featured .card:nth-of-type(1) .btn-outline",
           planckSimPill: "#featured .card:nth-of-type(2) .pill",
           planckSimTitle: "#featured .card:nth-of-type(2) h3",
-          planckSimText: "#featured .card:nth-of-type(2) > p",
+          planckSimText: "#featured .card:nth-of-type(2) p",
           planckSimElements: "#featured .card:nth-of-type(2) .stat-val",
           planckSimElementsLabel: "#featured .card:nth-of-type(2) .stat-label",
           planckSimStack: "#featured .card:nth-of-type(2) .stat-item:nth-of-type(2) .stat-val",
           planckSimStackLabel: "#featured .card:nth-of-type(2) .stat-item:nth-of-type(2) .stat-label",
           spatialPill: "#featured .card:nth-of-type(3) .pill",
           spatialTitle: "#featured .card:nth-of-type(3) h3",
-          spatialText: "#featured .card:nth-of-type(3) > p",
+          spatialText: "#featured .card:nth-of-type(3) p",
           spatialMCVal: "#featured .card:nth-of-type(3) .stat-val",
           spatialMCLabel: "#featured .card:nth-of-type(3) .stat-label",
           spatialSensorVal: "#featured .card:nth-of-type(3) .stat-item:nth-of-type(2) .stat-val",
@@ -107,14 +159,14 @@ document.addEventListener("DOMContentLoaded", () => {
           spatialLink: "#featured .card:nth-of-type(3) .btn-outline",
           upcomingHeading: "#upcoming h2",
           glassesTitle: "#upcoming .card:nth-of-type(1) h3",
-          glassesText: "#upcoming .card:nth-of-type(1) > p",
+          glassesText: "#upcoming .card:nth-of-type(1) p",
           glassesCamera: "#upcoming .card:nth-of-type(1) .stat-val",
           glassesCameraDesc: "#upcoming .card:nth-of-type(1) .stat-label",
           glassesAudio: "#upcoming .card:nth-of-type(1) .stat-item:nth-of-type(2) .stat-val",
           glassesAudioDesc: "#upcoming .card:nth-of-type(1) .stat-item:nth-of-type(2) .stat-label",
           frcScoutPill: "#upcoming .card:nth-of-type(2) .pill",
           frcScoutTitle: "#upcoming .card:nth-of-type(2) h3",
-          frcScoutText: "#upcoming .card:nth-of-type(2) > p",
+          frcScoutText: "#upcoming .card:nth-of-type(2) p",
           frcScoutAnalysis: "#upcoming .card:nth-of-type(2) .stat-val",
           frcScoutAnalysisDesc: "#upcoming .card:nth-of-type(2) .stat-label",
           frcScoutTech: "#upcoming .card:nth-of-type(2) .stat-item:nth-of-type(2) .stat-val",
@@ -132,8 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           pageTitle: ".section.fade-in-section h1",
           pageSub: ".section.fade-in-section .hero-sub",
@@ -173,8 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           heroTitle: "header.hero h1",
           heroSub: "header.hero .hero-sub",
@@ -209,8 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           headerPill: "header.section .pill",
           headerTitle: "header.section h1",
@@ -228,8 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           headerPill: "header.section .pill",
           headerTitle: "header.section h1",
@@ -258,8 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           heroPill: "header.hero .pill",
           heroTitle: "header.hero h1",
@@ -285,8 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           heroPill: "header.hero .pill",
           heroTitle: "header.hero h1",
@@ -318,8 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           heroPill: "header.hero .pill",
           heroTitle: "header.hero h1",
@@ -382,8 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           pageTitle: ".section.fade-in-section h1",
           pageSub: ".section.fade-in-section .hero-sub",
@@ -399,8 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
           navProjects: "#nav-links a:nth-of-type(2)",
           navResearchPapers: "#nav-links a:nth-of-type(3)",
           navRobotics: "#nav-links a:nth-of-type(4)",
-          navResources: "#nav-links a:nth-of-type(5)",
-          navTeam: "#nav-links a:nth-of-type(6)",
+          navTeam: "#nav-links a:nth-of-type(5)",
           footerCopyright: ".footer p",
           heroPill: "header.hero .pill",
           heroTitle: "header.hero h1",
@@ -432,8 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navProjects: "#nav-links a:nth-of-type(2)",
         navResearchPapers: "#nav-links a:nth-of-type(3)",
         navRobotics: "#nav-links a:nth-of-type(4)",
-        navResources: "#nav-links a:nth-of-type(5)",
-        navTeam: "#nav-links a:nth-of-type(6)",
+        navTeam: "#nav-links a:nth-of-type(5)",
         footerCopyright: ".footer p",
       };
 
@@ -511,18 +553,18 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class="toast-close" id="toast-close-btn" aria-label="Close">&times;</button>
         `;
         document.body.appendChild(toast);
-        
+
         toast.querySelector("#toast-close-btn").addEventListener("click", () => {
           toast.classList.remove("show");
         });
       }
-      
+
       toast.querySelector("#toast-text").textContent = message;
       // Trigger reflow/animation
       setTimeout(() => {
         toast.classList.add("show");
       }, 50);
-      
+
       // Auto-hide after 5 seconds
       setTimeout(() => {
         toast.classList.remove("show");
@@ -547,7 +589,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize Translations & Probing
     saveOriginalText();
-    
+
     const initTranslation = async () => {
       const savedLang = localStorage.getItem(storageKey);
       const alreadyDetected = localStorage.getItem("hicswa-language-detected");
@@ -594,7 +636,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // US Location Restriction (members.html only)
-  const isMembersPage = window.location.pathname.endsWith("members.html") || window.location.pathname.split("/").pop() === "members.html";
+  const isMembersPage =
+    window.location.pathname.endsWith("members.html") ||
+    window.location.pathname.split("/").pop() === "members.html";
   if (isMembersPage) {
     const runRestrictionCheck = async () => {
       // 1. Instantly create and show loading overlay
@@ -681,7 +725,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const icon = document.createElement("div");
         icon.className = "restriction-icon";
         icon.innerHTML = `
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock" style="color: var(--text-secondary);">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-secondary);">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>

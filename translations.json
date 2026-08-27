@@ -14,7 +14,7 @@
     "index": {
       "heroPill": "STEM de Código Abierto",
       "heroTitle": "Ciencia Compartida y Simplificada",
-      "heroSub": "Construimos simuladores, software y hardware para la comunidad científica. Todo es de código abierto y está documentado para que puedas replicarlo tú mismo.",
+      "heroSub": "Las herramientas educativas o de investigación de calidad a menudo están bloqueadas tras precios elevados, por lo que nuestro objetivo es reducir esos precios o hacerlas completamente gratuitas. El sitio web contiene enlaces a todos los proyectos y a todas las instrucciones de configuración, programación, firmware y hardware.",
       "heroBtn1": "Ver Proyectos",
       "heroBtn2": "Nuestro Equipo de Robótica",
       "missionCard1Title": "Accesibilidad",
@@ -320,7 +320,7 @@
     "index": {
       "heroPill": "Открытый STEM",
       "heroTitle": "Наука для всех",
-      "heroSub": "Мы создаем симуляторы, программное и аппаратное обеспечение для научного сообщества. Все проекты имеют открытый исходный код и документированы, чтобы вы могли воспроизвести их самостоятельно.",
+      "heroSub": "Качественные исследовательские и образовательные инструменты часто стоят слишком дорого, поэтому наша цель — снизить эти цены или сделать их полностью бесплатными. На сайте представлены ссылки на все проекты, а также полные инструкции по настройке, программированию, прошивке и аппаратному обеспечению.",
       "heroBtn1": "Посмотреть проекты",
       "heroBtn2": "Наша команда робототехники",
       "missionCard1Title": "Доступность",
@@ -626,7 +626,7 @@
     "index": {
       "heroPill": "开源 STEM",
       "heroTitle": "共享且易懂的科学",
-      "heroSub": "我们为科学界构建模拟器、软件和硬件。一切都是开源且有完整文档的，方便您自行复现。",
+      "heroSub": "高质量的科研与教育工具往往价格高昂，因此我们的目标是降低这些成本或使其完全免费。本网站包含所有项目的链接，以及完整的配置、编程、固件和硬件说明。",
       "heroBtn1": "查看项目",
       "heroBtn2": "我们的机器人团队",
       "missionCard1Title": "易获得性",
@@ -932,7 +932,7 @@
     "index": {
       "heroPill": "STEM Open Source",
       "heroTitle": "La science, partagée et simplifiée",
-      "heroSub": "Nous construisons des simulateurs, des logiciels et du matériel pour la communauté scientifique. Tout est open source et documenté pour que vous puissiez le reproduire vous-même.",
+      "heroSub": "Les outils de recherche ou d'enseignement de qualité sont souvent bloqués par des prix élevés. Notre objectif est donc de réduire ces coûts ou de les rendre entièrement gratuits. Le site contient les liens vers tous les projets ainsi que l'ensemble des instructions d'installation, de programmation, de firmware et de matériel.",
       "heroBtn1": "Voir les projets",
       "heroBtn2": "Notre équipe robotique",
       "missionCard1Title": "Accessibilité",
