@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Contact Hicswa Community Science — reach us by email at hicswamicroscopy@gmail.com or by phone at 513-268-7156 (US and Canada Only)." />
+  <title>Contact Us – Hicswa Community Science</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">Hicswa <span class="accent">Community Science</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Mission</a>
+        <a href="projects.html">Projects</a>
+        <a href="research-papers.html">Research Papers</a>
+        <a href="robotics.html">Robotics</a>
+        <a href="members.html">Team</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <div class="language-switcher">
+          <label for="language-select" class="sr-only">Translate page</label>
+          <select id="language-select" aria-label="Translate page">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="ru">Russian</option>
+            <option value="zh-CN">Chinese</option>
+            <option value="fr">French</option>
+          </select>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="section section-pb-sm fade-in-section">
+    <div class="container">
+      <span class="pill" style="margin-bottom: 0.85rem;">Get in Touch</span>
+      <h1>Contact Us</h1>
+      <p class="hero-sub">
+        Have questions about our open-source scientific hardware, need replication assistance, or want to collaborate with our team? Reach out through email or direct phone.
+      </p>
+    </div>
+  </header>
+
+  <main class="section section-pt-0 fade-in-section">
+    <div class="container">
+      <!-- Direct Contact Cards -->
+      <div class="contact-grid">
+        <!-- Email Card -->
+        <div class="card contact-card" id="email-card">
+          <div>
+            <div class="contact-header">
+              <div class="contact-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-header-text">
+                <h3>Email Inquiries</h3>
+                <p class="contact-subtext">Primary communications channel</p>
+              </div>
+            </div>
+
+            <a href="mailto:hicswamicroscopy@gmail.com" class="contact-display-val" id="email-link">
+              hicswamicroscopy@gmail.com
+            </a>
+
+            <p class="contact-desc">
+              For technical questions about our instruments, replication guides, software development, student inquiries, or research partnerships.
+            </p>
+          </div>
+
+          <div>
+            <div class="button-group" style="margin-top: 0.5rem;">
+              <a href="mailto:hicswamicroscopy@gmail.com" class="btn btn-primary" id="send-email-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                <span>Send Email</span>
+              </a>
+              <button type="button" class="btn btn-secondary copy-btn" data-copy-target="hicswamicroscopy@gmail.com" id="copy-email-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Email</span>
+              </button>
+            </div>
+
+            <p class="contact-notice">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Typical response time: within 24–48 hours. Open to worldwide inquiries.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="card contact-card" id="phone-card">
+          <div>
+            <div class="contact-header">
+              <div class="contact-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-header-text">
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                  <h3>Phone &amp; SMS</h3>
+                  <span class="badge contact-badge-region">US &amp; Canada Only</span>
+                </div>
+                <p class="contact-subtext">Direct voice calls and text messages</p>
+              </div>
+            </div>
+
+            <a href="tel:+15132687156" class="contact-display-val" id="phone-link">
+              513-268-7156
+            </a>
+
+            <p class="contact-desc">
+              Direct phone line for project inquiries, robotics team questions, and voice support. Standard carrier rates may apply for cellular calls and SMS text messages.
+            </p>
+          </div>
+
+          <div>
+            <div class="button-group" style="margin-top: 0.5rem;">
+              <a href="tel:+15132687156" class="btn btn-primary" id="call-phone-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Call (513) 268-7156</span>
+              </a>
+              <button type="button" class="btn btn-secondary copy-btn" data-copy-target="513-268-7156" id="copy-phone-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Number</span>
+              </button>
+            </div>
+
+            <p class="contact-notice">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>US and Canada region only. International callers please reach out via email.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="card form-card">
+        <div style="margin-bottom: 1.5rem;">
+          <span class="pill" style="margin-bottom: 0.5rem;">Draft a Message</span>
+          <h3>Send Us a Direct Message</h3>
+          <p style="margin-bottom: 0;">Fill out the fields below to quickly compose an inquiry directly to <strong style="color: var(--text-primary);">hicswamicroscopy@gmail.com</strong>.</p>
+        </div>
+
+        <div id="form-feedback" class="form-success-banner" role="status" aria-live="polite">
+          Draft prepared! If your mail client didn't open automatically, you can email directly at <strong>hicswamicroscopy@gmail.com</strong>.
+        </div>
+
+        <form id="contact-form">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Jane Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Your Email</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="e.g. jane@example.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject" class="form-label">Topic / Project</label>
+            <select id="contact-subject" class="form-select">
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="PhotonPeek Microscope">PhotonPeek Scanning Microscope</option>
+              <option value="PlanckSim Molecule Simulator">PlanckSim Molecule Simulator</option>
+              <option value="Visionless Walking Assistance">Visionless Walking Assistance</option>
+              <option value="Rachel Vision AI">Rachel Vision AI Glasses</option>
+              <option value="FRC Team 6032 Robotics">FRC Team 6032 Robotics &amp; Scouting</option>
+              <option value="Research & Papers">Research Papers &amp; Documentation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Message</label>
+            <textarea id="contact-message" class="form-textarea" rows="5" placeholder="Write your question, replication details, or proposal here..." required></textarea>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary" id="form-submit-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Compose in Email App</span>
+            </button>
+            <button type="button" class="btn btn-secondary" id="copy-draft-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Message Draft</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Quick Resources Section -->
+      <div class="card resources-card" style="text-align: left;">
+        <h3 style="margin-bottom: 0.6rem;">Frequently Requested Resources</h3>
+        <p style="margin-bottom: 1.25rem;">Looking for instructions or project code before messaging us? You might find what you need right here:</p>
+        <div class="button-group">
+          <a href="projects.html" class="btn btn-secondary">Browse All Projects</a>
+          <a href="research-papers.html" class="btn btn-secondary">Research Papers</a>
+          <a href="members.html" class="btn btn-secondary">Meet Our Team</a>
+          <a href="robotics.html" class="btn btn-secondary">Robotics Team 6032</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Hicswa Community Science.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Inline handlers for Contact Page copy buttons & form drafting
+    document.addEventListener("DOMContentLoaded", () => {
+      // Copy to clipboard helper
+      const copyButtons = document.querySelectorAll(".copy-btn");
+      copyButtons.forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          const targetText = btn.getAttribute("data-copy-target");
+          if (!targetText) return;
+
+          try {
+            await navigator.clipboard.writeText(targetText);
+            const labelSpan = btn.querySelector("span");
+            const originalText = labelSpan ? labelSpan.textContent : "Copy";
+            if (labelSpan) labelSpan.textContent = "Copied!";
+            btn.classList.add("btn-primary");
+            btn.classList.remove("btn-secondary");
+
+            setTimeout(() => {
+              if (labelSpan) labelSpan.textContent = originalText;
+              btn.classList.remove("btn-primary");
+              btn.classList.add("btn-secondary");
+            }, 2000);
+          } catch (err) {
+            console.error("Clipboard copy failed: ", err);
+          }
+        });
+      });
+
+      // Contact form submit logic
+      const contactForm = document.getElementById("contact-form");
+      const feedbackBanner = document.getElementById("form-feedback");
+      const copyDraftBtn = document.getElementById("copy-draft-btn");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("contact-name").value.trim();
+          const senderEmail = document.getElementById("contact-email").value.trim();
+          const topic = document.getElementById("contact-subject").value;
+          const message = document.getElementById("contact-message").value.trim();
+
+          const subject = encodeURIComponent(`[Hicswa Contact: ${topic}] from ${name}`);
+          const body = encodeURIComponent(
+            `Hello Hicswa Community Science Team,\n\n${message}\n\n---\nSender: ${name}\nEmail: ${senderEmail}\nTopic: ${topic}`
+          );
+
+          if (feedbackBanner) {
+            feedbackBanner.classList.add("active");
+            feedbackBanner.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+
+          window.location.href = `mailto:hicswamicroscopy@gmail.com?subject=${subject}&body=${body}`;
+        });
+      }
+
+      if (copyDraftBtn) {
+        copyDraftBtn.addEventListener("click", async () => {
+          const name = document.getElementById("contact-name").value.trim() || "[Your Name]";
+          const senderEmail = document.getElementById("contact-email").value.trim() || "[Your Email]";
+          const topic = document.getElementById("contact-subject").value;
+          const message = document.getElementById("contact-message").value.trim() || "[Your Message]";
+
+          const draftText = `To: hicswamicroscopy@gmail.com\nSubject: [Hicswa Contact: ${topic}] from ${name}\n\nHello Hicswa Community Science Team,\n\n${message}\n\n---\nSender: ${name}\nEmail: ${senderEmail}\nTopic: ${topic}`;
+
+          try {
+            await navigator.clipboard.writeText(draftText);
+            const labelSpan = copyDraftBtn.querySelector("span") || copyDraftBtn;
+            const originalText = labelSpan.textContent;
+            labelSpan.textContent = "Draft Copied!";
+            if (feedbackBanner) {
+              feedbackBanner.textContent = "Draft copied to clipboard! Paste it into your preferred email client to send to hicswamicroscopy@gmail.com.";
+              feedbackBanner.classList.add("active");
+            }
+            setTimeout(() => {
+              labelSpan.textContent = originalText;
+            }, 2000);
+          } catch (err) {
+            console.error("Draft copy failed: ", err);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
